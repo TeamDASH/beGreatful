@@ -1,0 +1,1 @@
+// model of the mood_tag table

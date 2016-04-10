@@ -1,0 +1,39 @@
+{
+  "name": "be-greatful",
+  "version": "1.0.0",
+  "description": "online gratitude journal",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "bluebird": "^3.3.4",
+    "body-parser": "^1.15.0",
+    "connect-redis": "^3.0.2",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "morgan": "^1.7.0",
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "request-promise": "^2.0.1",
+    "should": "^8.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamDASH/beGreatful.git"
+  },
+  "author": "Team DASH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamDASH/beGreatful/issues"
+  },
+  "homepage": "https://github.com/TeamDASH/beGreatful#readme"
+}

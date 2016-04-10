@@ -1,1 +1,0 @@
-Controllers will do the main work of the application.

@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>AlyBank</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-    <h1>Test Page</h1>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">AlyBank</a>
+            <ul class="nav navbar-nav">
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="row">   
+            <div class="col-md-3 main-content">
+                <div id="sign-in-box">
+                    <h1>AlyBank</h1>
+                    <form role="form" id="sign-in-form">
+                        <div class="form-group">
+                            <div id="otherError" class="alert alert-danger message"></div>
+                            <label for="email" class="sr-only">Email:</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Password:</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                        </div>
+                        <a id="signin-button" class="btn btn-primary btn-block">Sign in</button>
+                        <a href="/create-profile.html">Create a new account</a>
+                    </form>
+                    <div id="signinMessage"><p>Signing you in...</p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
