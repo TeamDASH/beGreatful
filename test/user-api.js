@@ -27,6 +27,7 @@ var currUsername;
 describe('/api/users', function() {
     describe('api/users (POST)', function() {
         it('should create a new user', function() {
+            var password = 'password';
             var options = {
                 method: 'POST',
                 uri: baseUrl + '/users',
@@ -38,14 +39,16 @@ describe('/api/users', function() {
                     body.should.have.ownProperty('success');
                     
                     // check that user info has been entered into database
-                    return User.getInfo('email', 'alyssa@email.com')
+                    return User.getInfo('email', 'ahudon@uw.edu')
                         .then(function(user) {
                             console.log('where is the username');
                             user.should.have.property('firstName', 'Alyssa');
                             user.should.have.property('lastName', 'Hudon');
                             user.should.have.property('email', 'ahudon@uw.edu');
-                            var pass = User.validPassword(password1, user.password);
-                            should(pass).ok;
+                            return User.validPassword(password, user.password)
+                        })
+                        .then(function(pass) {
+                            should(pass).ok
                         });
                 });
         });
@@ -190,4 +193,15 @@ describe('/api/users/me', function() {
     describe('api/users/me (DELETE)', function() {
         it('should remove the user account');
     });
+    
+    
 });
+
+// delete user account after tests
+after(function() {
+    return connPool.queryAsync(`delete from user where email='ahudon@uw.edu'`)
+        .then(function(result) {
+        console.log('deleted user ' + result);
+    });
+});
+

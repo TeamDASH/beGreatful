@@ -4,8 +4,50 @@ var validate = require('../config/validate');
 
 var express = require('express');
 
-module.exports.Router = function(User, Account) {
+var passport = require('passport');
+
+module.exports.Router = function(User) {
     var router = express.Router();
+    
+     router.post('/login', function(req, res, next) {
+        var email = req.body.email;
+        var password = req.body.password; 
+        
+        if (!email || !validate.validEmail(email)) {
+            return res.json({error : 'Please enter valid email address'});
+        } else if (!password || !validate.validField(password)) {
+            return res.json({error : 'Please enter a password'});
+        } 
+           
+        passport.authenticate('local', 
+            function(err, user, info) {
+                console.log('trying to use passport local auth');
+                if (err) {
+                    console.log('error logging in user'  + err);
+                    return res.json({error : "It's our fault! Please come back later."});
+                }
+                if (user == false) {
+                    console.log('user value');
+                    console.log(user);
+                    console.log('no user like this');
+                    return res.json({error : "Username and password do not match."});
+                } else {
+                    req.logIn(user, function(err) {
+                        if (err) {
+                            return res.json({error : 'Username and password do not match.'});
+                        } 
+                        if (req.isAuthenticated) {
+                            console.log('logged in user');
+                            return res.json({success : "Successfully authenticated."});
+                        } else {
+                            console.log('user not authenticated');
+                            return res.json({error : 'Username and password do not match.'});
+                        }
+                    });
+                }
+            })(req, res, next);
+        
+    });
     
     router.post('/users', function(req, res, next) {
         var email = req.body.email;
@@ -45,6 +87,12 @@ module.exports.Router = function(User, Account) {
             .catch(function(err) {
                 return res.json({error : err});
             });   
+    });
+
+    // gets user profile information
+    router.get('/users/me', function(req, res, next) {
+        var user = req.user;   
+        res.json({user : user});
     });
     
     return router;

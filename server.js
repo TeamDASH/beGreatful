@@ -11,10 +11,14 @@ var passport = require('passport');
 var bluebird = require('bluebird');
 var RedisStore = require('connect-redis')(session);
 
+
 // configure mysql
 var mysql = require('mysql');
 var dbConfig = require('./secret/config-db.json');
 var connPool = bluebird.promisifyAll(mysql.createPool(dbConfig));
+
+// require passport config
+require('./config/passport')(passport, connPool)
 
 // cookie secret
 var cookieSigSecret = require('./secret/cookie-secret.json').secret;
@@ -35,25 +39,21 @@ app.use(session({
     store: new RedisStore()
 }));
 
-console.log('set up session');
 // set up passport
 app.use(passport.initialize());
 app.use(passport.session());
 
-console.log('set up passport');
 // require controllers
 var userApi = require('./controllers/user-api');
 
 // require models 
 var user = require('./models/user').Model(connPool);
 
-console.log('about to set up api route');
 // require api routes
 app.use('/api', userApi.Router(user));
 
-console.log('set up api route');
 // require other routes
-require('./controllers/routes.js')(app, passport, express);
+require('./config/routes')(app, passport, express);
 
 app.listen(80, function() {
     console.log('server is listening...');

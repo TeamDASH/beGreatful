@@ -27,10 +27,10 @@ module.exports = function(passport, connectionPool) {
             });
     });
      
-       // set up local strategy 
+    // set up local strategy 
     passport.use('local', new LocalStrategy({
-        username: 'username',
-        password: 'password',
+        usernameField: 'email',
+        passwordField: 'password',
         passReqToCallback : true
     }, 
     function(req, email, password, done) {
@@ -41,13 +41,16 @@ module.exports = function(passport, connectionPool) {
                     console.log('error finding user ');
                     return done(null, false);
                 }
-                if (User.validPassword(password, user.password) && user) {
+                return User.validPassword(password, user.password)
+            })
+            .then(function(validPassword) {
+                if (validPassword && user) {
                     console.log('found user');
                     return done(null, user);
                 } else {
                     console.log('wrong username or password');
                     return done(null, false);
-                }  
+                }
             });
     }));
 }
