@@ -58,12 +58,14 @@ var user = {
             });
     },
     validPassword(password, userPassword) {
-        return bcrypt.compare(password, userPassword, function(err, res) {
-            if (err) {
-                console.log('error comparing passwords ' + err);
-            } 
-            console.log('passwords compared successfully');
-        });
+        return bcrypt.compareAsync(password, userPassword)
+            .then(function(data)  {
+                console.log('passwords compared successfully');
+                return data; 
+            })
+            .catch(function(err) {
+                console.log('error in validPassword method ' + err);
+            });
     },
     update(userID, attribute, value) {
         var sql = 'update user set ??=? where userID = ?';

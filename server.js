@@ -45,12 +45,15 @@ app.use(passport.session());
 
 // require controllers
 var userApi = require('./controllers/user-api');
+var entryApi = require('./controllers/entry-api')
 
 // require models 
 var user = require('./models/user').Model(connPool);
+var entry = require('./models/entry').Model(connPool);
 
 // require api routes
 app.use('/api', userApi.Router(user));
+app.use('/api', entryApi.Router(entry));
 
 // require other routes
 require('./config/routes')(app, passport, express);

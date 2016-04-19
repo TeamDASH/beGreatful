@@ -35,18 +35,20 @@ module.exports = function(passport, connectionPool) {
     }, 
     function(req, email, password, done) {
         console.log('in local strategy');
+        var currUser;
          User.getInfo('email', email) 
             .then(function(user) {
-                if (user == null) {
+                currUser = user;
+                if (currUser == null) {
                     console.log('error finding user ');
                     return done(null, false);
                 }
-                return User.validPassword(password, user.password)
+                return User.validPassword(password, currUser.password)
             })
             .then(function(validPassword) {
-                if (validPassword && user) {
+                if (validPassword && currUser) {
                     console.log('found user');
-                    return done(null, user);
+                    return done(null, currUser);
                 } else {
                     console.log('wrong username or password');
                     return done(null, false);

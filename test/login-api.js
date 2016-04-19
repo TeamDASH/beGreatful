@@ -24,21 +24,24 @@ before(function() {
     var options = {
         method: 'POST',
         uri: baseUrl + '/users',
-        body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
+        body: {email : 'ahudon2@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
         json: true
     }
     return request(options)
         .then(function(body) {
+            console.log(body);
             body.should.have.ownProperty('success');
         });
 });
 
 describe('/api/login (POST)', function() {
-    it.only('should log a user with valid credentials in', function() {
+    
+    it('should log a user with valid credentials in', function() {
+        this.timeout(5000);
         var options = {
             method: 'POST',
             uri: baseUrl + '/login',
-            body: {email : 'ahudon@uw.edu', password: 'password'},
+            body: {email : 'ahudon2@uw.edu', password: 'password'},
             json: true
         }
         
@@ -66,7 +69,7 @@ describe('/api/login (POST)', function() {
         var options = {
             method: 'POST',
             uri: baseUrl + '/login',
-            body: {email : 'ahudon@uw.edu'},
+            body: {email : 'ahudon2@uw.edu'},
             json: true
         }
         
@@ -80,7 +83,7 @@ describe('/api/login (POST)', function() {
         var options = {
             method: 'POST',
             uri: baseUrl + '/login',
-            body: {email : 'ahudon@uw.edu', password: 'passwords'},
+            body: {email : 'ahudon2@uw.edu', password: 'passwords'},
             json: true
         }
         
@@ -93,7 +96,7 @@ describe('/api/login (POST)', function() {
 
 // delete user account after tests
 after(function() {
-    return connPool.queryAsync(`delete from user where email='ahudon@uw.edu'`)
+    return connPool.queryAsync(`delete from user where email='ahudon2@uw.edu'`)
         .then(function(result) {
         console.log('deleted user ' + result);
     });

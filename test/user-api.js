@@ -19,10 +19,7 @@ request = request.defaults({jar: true});
 // allow for changing host to test prod server
 var host = process.env.HOST || '127.0.0.1';
 
-var baseUrl = 'http://' + host + '/api';
-
-var currPassword;
-var currUsername; 
+var baseUrl = 'http://' + host + '/api'; 
 
 describe('/api/users', function() {
     describe('api/users (POST)', function() {
