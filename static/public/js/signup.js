@@ -22,7 +22,10 @@ $(function() {
                 .done(function(data) {
                     if (data.success) {
                         window.location.replace('home.html');
-                    }
+                    } else {                       
+                        $('#otherError').text(data.error);
+                        $('#otherError').show();
+                    }  
                 });
         }
     });
