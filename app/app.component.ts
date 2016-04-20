@@ -1,10 +1,30 @@
-// // placeholder app component file
-// import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import { Component }       from 'angular2/core';
+import { LoginComponent } from './login.component'
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-// import { Component }
+@Component({
+  selector: 'my-app',
+  template: `
+  <h1>Test app</h1>
+  <div [routerLink]="['Login']"></div>
+  <router-outlet></router-outlet>
+    `,
 
-// @Component ({
-//     selector: 'begreatful-app',
-//     template: ,
-//     directives: [RouterOutlet]
-// })
+  directives: [ROUTER_DIRECTIVES],
+    providers: [
+        ROUTER_PROVIDERS,
+    ]
+
+})
+
+@RouteConfig([
+  {  
+    path: '/login',
+    name: 'Login',
+    component: LoginComponent,
+    useAsDefault: true
+  }
+])
+
+export class AppComponent {
+}

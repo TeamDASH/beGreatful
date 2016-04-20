@@ -9,18 +9,23 @@ app.get('/signout', function(req, res) {
 });
 
 // look for files in static public directory
-app.use(express.static('./static/public'));
+app.use(express.static('.'));
+app.use(express.static('./app'));
 
-// check to make sure user is authenticated
-app.use(function(req, res, next) {
-    if (req.isAuthenticated()) {
-        next();
-    } else {
-        res.redirect('/');
-    }
-});
+// app.use('/libs', express.static('node_modules'));
 
-// look for files in static secure directory
-app.use(express.static('./static/secure'));
+// app.use(express.static('./app.static/public'));
+
+// // check to make sure user is authenticated
+// app.use(function(req, res, next) {
+//     if (req.isAuthenticated()) {
+//         next();
+//     } else {
+//         res.redirect('/');
+//     }
+// });
+
+// // look for files in static secure directory
+// app.use(express.static('./client/app/static/secure'));
 
 }

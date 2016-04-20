@@ -6,9 +6,9 @@ var connPool;
 
 var bluebird = require('bluebird');
 
-var bcrypt = require('bcrypt');
+//var bcrypt = require('bcrypt');
 
-bcrypt = bluebird.promisifyAll(bcrypt);
+//bcrypt = bluebird.promisifyAll(bcrypt);
 
 var rounds = 10; 
 

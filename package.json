@@ -1,11 +1,16 @@
 {
   "name": "be-greatful",
   "version": "1.0.0",
+  "scripts": {
+    "start": "tsc && node server.js",
+    "tsc": "tsc"
+  },
   "description": "online gratitude journal",
   "main": "server.js",
   "directories": {
     "test": "test"
   },
+  
   "dependencies": {
     "angular2": "^2.0.0-beta.15",
     "bcrypt": "^0.8.5",
