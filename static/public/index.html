@@ -1,50 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
     <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/site.css"/>
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-
 <body>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-
-        <div class="row">
-            <form id="login-form" class="card-panel teal col m6 center-component">
-                <div class="row">
-                            
-                    <div class="row">
-                        <div class="input-field col s12 m6 offset-m3">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    
-                     <div class="row">
-                        <div id="otherError"></div>
-                        <div class="input-field col s12 m6 offset-m3">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    
-                    <div class="row col s12 m6 offset-m4">
-                        <button class="btn waves-effect waves-light" id="signin-button">Submit
-                        <i class="material-icons right">send</i>
-                        </button>
+    <script type="text/javascript" src="./js/index.js"></script>
+    
+    <div class="row">
+        <form id="login-form" class="card-panel teal col m6 center-component">
+            <div class="row">
+                       
+                <div class="row white-text text-center">
+                    <h2>beGreatful</h2> 
+                    <div class="input-field col s12 m6 offset-m3">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
                     </div>
                 </div>
-            </form>
-        </div>
-        
-        <script type="text/javascript" src="./js/validate.js"></script>
-        <script type="text/javascript" src="./js/index.js"></script>
-    </body>
+                
+                <div class="row">
+                    <div id="otherError"></div>
+                    <div class="input-field col s12 m6 offset-m3">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                
+                <div class="row col s12 m6 offset-m4">
+                    <button class="btn waves-effect waves-light" id="signin-button" type="button">Submit
+                    <i class="material-icons right">send</i>
+                    </button>
+                </div>
+                
+                <div class="row col s12 m6 offset-m4">
+                    <a href="/signup.html"><button class="btn waves-effect waves-light" id="signin-button" type="button">Create an account
+                    </button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    
+</body>
 </html>

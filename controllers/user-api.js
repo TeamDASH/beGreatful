@@ -25,8 +25,7 @@ module.exports.Router = function(User) {
                 if (err) {
                     console.log('error logging in user'  + err);
                     return res.json({error : "It's our fault! Please come back later."});
-                }
-                if (user == false) {
+                } else if (user == false) {
                     console.log('user value');
                     console.log(user);
                     console.log('no user like this');
@@ -79,10 +78,18 @@ module.exports.Router = function(User) {
             .then(function(user) {
                 console.log('back in api');
                 console.log(user);
-                if (user) {
-                    return res.json({success : 'User account created'});
-                }
-                // login with passport here
+                req.logIn(user, function(err) {
+                    if (err) {
+                        return res.json({error : 'Username and password do not match.'});
+                    } 
+                    if (req.isAuthenticated) {
+                        console.log('logged in user');
+                        return res.json({success : "Successfully authenticated."});
+                    } else {
+                        console.log('user not authenticated');
+                        return res.json({error : 'Username and password do not match.'});
+                    }
+                });
             }) 
             .catch(function(err) {
                 return res.json({error : err});
