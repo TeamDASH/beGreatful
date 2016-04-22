@@ -9,7 +9,7 @@ app.get('/signout', function(req, res) {
 });
 
 // look for files in static public directory
-app.use(express.static('./static/public'));
+app.use(express.static('./client'));
 
 // check to make sure user is authenticated
 app.use(function(req, res, next) {
@@ -21,6 +21,6 @@ app.use(function(req, res, next) {
 });
 
 // look for files in static secure directory
-app.use(express.static('./static/secure'));
+//app.use(express.static('./static/secure'));
 
 }

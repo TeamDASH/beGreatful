@@ -14,14 +14,14 @@ var RedisStore = require('connect-redis')(session);
 
 // configure mysql
 var mysql = require('mysql');
-var dbConfig = require('./secret/config-db.json');
+var dbConfig = require('./server/secret/config-db.json');
 var connPool = bluebird.promisifyAll(mysql.createPool(dbConfig));
 
 // require passport config
-require('./config/passport')(passport, connPool)
+require('./server/config/passport')(passport, connPool)
 
 // cookie secret
-var cookieSigSecret = require('./secret/cookie-secret.json').secret;
+var cookieSigSecret = require('./server/secret/cookie-secret.json').secret;
 
 // set up express
 var app = express();
@@ -44,19 +44,19 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // require controllers
-var userApi = require('./controllers/user-api');
-var entryApi = require('./controllers/entry-api')
+var userApi = require('./server/controllers/user-api');
+var entryApi = require('./server/controllers/entry-api')
 
 // require models 
-var user = require('./models/user').Model(connPool);
-var entry = require('./models/entry').Model(connPool);
+var user = require('./server/models/user').Model(connPool);
+var entry = require('./server/models/entry').Model(connPool);
 
 // require api routes
 app.use('/api', userApi.Router(user));
 app.use('/api', entryApi.Router(entry));
 
 // require other routes
-require('./config/routes')(app, passport, express);
+require('./server/config/routes')(app, passport, express);
 
 app.listen(80, function() {
     console.log('server is listening...');
