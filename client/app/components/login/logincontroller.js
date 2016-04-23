@@ -2,8 +2,6 @@
 
 var loginController = angular.module('loginController', []);
 
-loginCtrl.controller('LoginCtrl', ['$scope', 
-    function($scope) {
-        $scope.test = 'hello';
-    }
- ])
+loginController.controller('LoginCtrl', function ($scope) {
+  $scope.text = 'woooo';
+});
