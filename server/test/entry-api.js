@@ -75,9 +75,20 @@ describe('api/entries', function() {
                 });
         });
         
-        it('should not let users add an empty entry');
-        
-        it('should not let users add a new entry associated with another user account');          
+        it('should not let users add an empty entry', function() {
+            var options = {
+                method: 'POST',
+                uri: baseUrl + '/entries',
+                body: {entryMood : "happy"},
+                json: true
+            }
+            
+            return request(options)
+                .then(function(body) {
+                    console.log(body);
+                    body.should.have.ownProperty('error');
+                });
+        });        
     });
 
     describe('/api/entries (GET)', function() {

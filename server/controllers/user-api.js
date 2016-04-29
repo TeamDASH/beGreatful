@@ -9,6 +9,7 @@ var passport = require('passport');
 module.exports.Router = function(User) {
     var router = express.Router();
     
+     // requires email and password as POST parameters
      router.post('/login', function(req, res, next) {
         var email = req.body.email;
         var password = req.body.password; 
@@ -48,6 +49,7 @@ module.exports.Router = function(User) {
         
     });
     
+    // requires email, firstName, lastName, password1 and password2 as POST parameters
     router.post('/users', function(req, res, next) {
         var email = req.body.email;
         var firstName = req.body.firstName;

@@ -7,6 +7,7 @@ var validate = require('../config/validate');
 module.exports.Router = function(Entry) {
     var router = express.Router();
     
+    // requires entryThought1, entryThought2, entryThought3 OR moreThoughts, and entryMood as POST parameters
     router.post('/entries', function(req, res, next) {
         var entryThought1 = req.body.entryThought1;
         var entryThought2 = req.body.entryThought2;

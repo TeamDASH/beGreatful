@@ -1,44 +1,38 @@
-<div class="container">
+<div class="container" ng-controller="AccountCtrl">
     <div class="row">
-        <form role="form">
+        <form role="form" novalidate>
             <div class="col-lg-6">
-                <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
                 <div class="form-group">
-                    <label for="InputName">Enter Name</label>
+                    <label for="email">Email</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="user.email">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="InputEmail">Enter Email</label>
+                    <label for="firstName">First Name</label>
                     <div class="input-group">
-                        <input type="email" class="form-control" id="InputEmailFirst" name="InputEmail" placeholder="Enter Email" required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First name" ng-model="user.firstName">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="InputEmail">Confirm Email</label>
+                    <label for="lastName">Last Name</label>
                     <div class="input-group">
-                        <input type="email" class="form-control" id="InputEmailSecond" name="InputEmail" placeholder="Confirm Email" required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last name" ng-model="user.lastName">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="InputPassword">Enter Password</label>
+                    <label for="password1">Password</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="InputPassFirst" name="InputPass" placeholder="Enter Password" required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input type="password" class="form-control" id="password1" name="password1" placeholder="Password" ng-model="user.password1">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="InputPassword">Confirm Password</label>
+                    <label for="password2">Confirm password</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="InputPassSecond" name="InputPass" placeholder="Confirm Password" required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" ng-model="user.password2">
                     </div>
                 </div>
-                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+                <button type="button" ng-click="createAccount(user)" id="submit" class="btn btn-info pull-right">Submit</button>
             </div>
         </form>
     </div>
