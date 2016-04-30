@@ -1,16 +1,23 @@
 <!--Work-in-progress login page-->
 <div class="container" ng-controller="LoginCtrl">
+  <md-card flex="40" flex-offset="30">
     <form class="form-signin" novalidate>
-      <h2 class="form-signin-heading">Please sign in</h2>
-      
+      <md-card-title>Please sign in</md-card-title>
+      <md-card>
+      <md-input-container>
       <label for="email" class="sr-only">Email address</label>
       <input type="email" id="email" class="form-control" placeholder="Email address" ng-model="user.email" autofocus>
+      </md-input-container>
       
+      <md-input-container>
       <label for="password" class="sr-only">Password</label>
       <input type="password" id="password" class="form-control" placeholder="Password" ng-model="user.password">
-    
-      <a href="#/createaccount">Create an Account</a>
+      </md-input-container>
       
-      <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login(user)">Sign in</button>
+      <a href="#/createaccount" layout-align="center">Create an Account</a>
+      
+      <md-button class="md-raised md-primary" type="submit" ng-click="login(user)">Sign in</md-button>
     </form>
+    <md-card>
+    
 </div>

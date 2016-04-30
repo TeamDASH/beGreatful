@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="beGreatfulApp">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>beGreatful</title>
+ 
+   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
-    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/login.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.js"></script>
-    
-    <script src="app/app.js"></script>
-    
-    <!--Every controller js file needs to be referenced here -->
-    <script src="app/components/login/logincontroller.js"></script>
-    <script src="app/components/createAccount/accountcontroller.js"></script>
-    
-    <!--Every service file needs to be referenced here-->
-    <script src="app/services/userService.js"></script>
 </head>
 
 <body>
+    
     <!--All partials will go in here, everything outside of it will always be displayed -->
     <div ng-view></div>
     
-    <!--Bootstrap goodies-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  <script src="app/app.js"></script>
+    
+  <!--Every controller js file needs to be referenced here -->
+  <script src="app/components/login/logincontroller.js"></script>
+  <script src="app/components/createAccount/accountcontroller.js"></script>
+    
+  <!--Every service file needs to be referenced here-->
+  <script src="app/services/userService.js"></script>
+   
 </body>
 </html>
