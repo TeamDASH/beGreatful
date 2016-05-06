@@ -5,13 +5,69 @@
     <title>beGreatful</title>
  
    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-</head>
+    <style>
+        #nav {
+            color: white;
+        }
+        #footer {
+            position: fixed;
+            bottom: 0px;
+        }
+        #content{
+            margin-left: 10px;
+        }
+        
+        .gridListdemoBasicUsage md-grid-list {
+            margin: 8px;
+            }
 
-<body>
+            .gridListdemoBasicUsage .gray {
+            background: #f5f5f5;
+            }
+
+            .gridListdemoBasicUsage md-grid-tile {
+            transition: all 400ms ease-out 50ms;
+            }
+    </style>
+</head>
+<body layout="column" ng-controller="NavCtrl">
+    <md-toolbar id="tool" class="main-toolbar" layout="row" style="background-color:teal" hide-gt-sm>
+        <md-button class="menu" aria-label="menu" ng-click="toggleLeft()">
+            <md-icon class="material-icons">menu</md-icon>
+        </md-button>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav id="nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z4" style="background-color:teal" layout="column">
+            <md-list>
+                <md-list-item>
+                    <md-button>journal</md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button>community</md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button>progress</md-button>
+                </md-list-item>
+            </md-list>
+            
+            <md-list id="footer">
+                <md-list-item>
+                    <md-button>account</md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button>logout</md-button>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        <md-content id="content" flex>
+            <div ng-view></div>
+        </md-content>
+    </div>
+
     
     <!--All partials will go in here, everything outside of it will always be displayed -->
-    <div ng-view></div>
     
     <!-- Angular Material requires Angular.js Libraries -->
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
@@ -29,6 +85,8 @@
   <script src="app/components/login/logincontroller.js"></script>
   <script src="app/components/createAccount/accountcontroller.js"></script>
   <script src="app/components/journal/journalentry.js"></script>
+  <script src="app/components/SideNav/navController.js"></script>
+  <script src="app/components/journalcard/journalcard.js"></script>
     
   <!--Every service file needs to be referenced here-->
   <script src="app/services/userService.js"></script>
