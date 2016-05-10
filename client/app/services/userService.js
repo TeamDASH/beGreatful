@@ -10,3 +10,8 @@ userService.factory('Login', ['$resource',
     function($resource) {
         return $resource('/api/login')
     }]);
+
+// userService.factory('Auth', ['Login',
+//     function(Login) {
+//         return Login.get({});
+// }]);

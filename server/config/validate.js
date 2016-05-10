@@ -1,5 +1,8 @@
 var Validate = {
         validPassword(pass1, pass2){
+        if (!pass1 || !pass2) {
+            return false;
+        }
         var isValidLength = pass1.length >= 8;
         var passwordsMatch = pass1.localeCompare(pass2) == 0;
         

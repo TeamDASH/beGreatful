@@ -39,14 +39,66 @@ module.exports.Router = function(Entry) {
         }
         
         return Entry.insert(userID, entryThought1, entryThought2, entryThought3, moreThoughts, entryMood)
-            .then(function() {
-                res.json({success: 'Your entry was created.'});
+            .then(function(data) {
+                res.json({entry : data});
             })
             .catch(function() {
                 res.status(500);
                 res.json({error: 'Sorry, we were unable to add your entry. Please try again later.'});
             });
         
+    });
+    
+    router.get('/entries', function(req, res, next) {
+        var user = req.user;
+        
+        return Entry.getInfo('userID', user.userID)
+            .then(function(data) {
+                console.log(data);
+                res.json({entries : data})
+            })
+            .catch(function() {
+                res.status(500);
+                res.json({error: 'Sorry, we were unable to access your entries. Please try again later.'});
+            });
+    });
+
+    router.get('/entries/:id', function(req, res, next) {
+        var entryID = req.params.id;
+        var user = req.user;
+        
+        Entry.getInfo('entryID', entryID) 
+            .then(function(data) {
+                console.log(data);
+                res.json({entry: data});
+            })
+            .catch(function() {
+                res.status(500);
+                res.json({error: 'Sorry, we were unable to find your entry. Please try again later.'});
+            });      
+    });
+    
+    // requires 
+    router.delete('/entries/:id', function(req, res, next) {
+        var entryID = req.params.id;
+        var user = req.user;
+        
+        Entry.getInfo('entryID', entryID) 
+            .then(function(data) {
+                console.log(data);
+                if (data.userID != user.userID) {
+                    res.json({error : 'You are not the owner of this entry.'})
+                } else {
+                    return Entry.remove(entryID) 
+                }    
+            })
+            .then(function() {
+                res.json({success: 'Your entry was deleted.'});
+            })
+            .catch(function() {
+                res.status(500);
+                res.json({error: 'Sorry, we were unable to delete your entry. Please try again later.'});
+            });      
     });
     
     return router;

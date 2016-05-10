@@ -35,6 +35,15 @@ var entry = {
             .then(function() {
                 return entry.getInfo('entryID', entryID);
             });
+    },
+    remove(entryID) {
+        var sql = 'delete from entry where entryID=?';
+        var params = [entryID];
+        
+        return connPool.queryAsync(sql, params)
+            .then(function() {
+                return entry.getInfo('entryID', entryID);
+            });
     }
 }
 

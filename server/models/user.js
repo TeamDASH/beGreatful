@@ -33,8 +33,6 @@ var user = {
         return user.generateHash(password)
             .then(function(data) {
                 password = data;
-            })
-            .then(function() {
                 console.log('trying to insert into database');
                 var sql = `insert into user (email, firstName, lastName, password) values (?,?,?,?)`;
                 var params = [email, firstName, lastName, password];
@@ -74,6 +72,18 @@ var user = {
         console.log('value ' + value);
         var params = [attribute, value, userID]
         return connPool.queryAsync(sql, params)
+            .then(function() {
+                return user.getInfo('userID', userID);
+            });
+    },
+    updatePassword(userID, password) {
+        return user.generateHash(password)
+            .then(function(data) {
+                password = data;
+                var sql= `update user set password=? where userID=?`;
+                var params = [password, userID];
+                return connPool.queryAsync(sql, params)
+            })
             .then(function() {
                 return user.getInfo('userID', userID);
             });

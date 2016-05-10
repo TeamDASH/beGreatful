@@ -21,12 +21,15 @@ request = request.defaults({jar: true});
 var host = process.env.HOST || '127.0.0.1';
 
 var baseUrl = 'http://' + host + '/api'; 
+var currEntryID; 
 
 describe('api/entries', function() {
+    
     
     describe('/api/entries (POST)', function() {
         
         before(function() {
+            
             this.timeout(5000);
             var password = 'password';
             var options = {
@@ -65,13 +68,8 @@ describe('api/entries', function() {
             return request(options)
                 .then(function(body) {
                     console.log(body);
-                    body.should.have.ownProperty('success');
-                })
-                .then(function(body) {
-                     return Entry.getInfo('entryMood', 'happy')
-                })
-                .then(function(body) {
-                    console.log(body);
+                    body.should.have.ownProperty('entry');
+                    currEntryID = body.entry.entryID;
                 });
         });
         
@@ -93,17 +91,39 @@ describe('api/entries', function() {
 
     describe('/api/entries (GET)', function() {
         
-        it('should allow users to see all of their entries');
-        
-        it('should not let allow users to view other user entries');
-        
+        it('should allow users to see all of their entries', function() {
+            var options = {
+                method: 'GET',
+                uri: baseUrl + '/entries',
+                json: true
+            }
+            
+            return request(options)
+                .then(function(body) {
+                    console.log(body);
+                    body.should.have.ownProperty('entries');
+                });
+        });     
     });
      
 });
 
 describe('api/entries/{id}', function() {
     describe('api/entries/{id} (GET)', function() {
-        it('should get the entry for that id');
+        it('should get the entry for that id', function() {   
+            var options = {
+                method: 'GET',
+                uri: baseUrl + '/entries/' + currEntryID,
+                json: true
+            }
+            
+            return request(options)
+                .then(function(body) {
+                    console.log(body);
+                    body.should.have.ownProperty('entry');
+                    
+                });
+        });
     });
     
     describe('api/entries/{id} (PUT)', function() {

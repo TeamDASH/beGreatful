@@ -9,6 +9,14 @@ var passport = require('passport');
 module.exports.Router = function(User) {
     var router = express.Router();
     
+    router.get('/login', function(req, res, next) {
+        if (req.user) {
+            res.json({success : 'User is logged in'});
+        } else {
+            res.json({error : 'User is not logged in'});
+        }   
+    });
+    
      // requires email and password as POST parameters
      router.post('/login', function(req, res, next) {
         var email = req.body.email;
@@ -100,9 +108,87 @@ module.exports.Router = function(User) {
 
     // gets user profile information
     router.get('/users/me', function(req, res, next) {
-        var user = req.user;   
+        var user = req.user;
+        delete user.password;
         res.json({user : user});
     });
+    
+    // updates user profile information
+    router.put('/users/me', function(req, res, next) {
+        var password1 = req.body.password1;
+        var password2 = req.body.password2;
+        
+        var firstName = req.body.firstName;
+        var lastName = req.body.lastName;
+        
+        var user = req.user;
+        
+        var response = {"success" : [], "error" : []};
+        
+        updateFirstName(firstName, user, response)
+            .then(function(data) {
+                console.log('successfully updated first name');
+                res.json(response);
+            })
+            .catch(function(err) {
+                res.json(response);
+            })
+            
+        
+        // if (validate.validPassword(password1, password2) || firstName || lastName) {
+        //      if (validate.validPassword(password1, password2)) {
+        //         User.updatePassword(user.userID, password1)
+        //             .then(function() {
+        //                 response.success.push("Password updated successfully.");
+        //             })
+        //             .catch(function(err) {
+        //                 response.error.push("Failed to update password.");
+        //             });
+        //      }
+             
+        //      if (lastName) {
+        //          return User.update(user.userID, 'lastName', lastName)
+        //             .then(function() {
+        //                 return response.success.push("Last name updated successfully.");
+        //             })
+        //             .catch(function() {
+        //                 return response.error.push("Failed to update last name.");
+        //             });
+        //      }
+        //      console.log('responding');
+        //      res.json(response);
+        // } else {
+        //     res.json({error : 'Please enter a field to update.'})
+        // }
+    });
+    
+    function updateFirstName(firstName, user, response) {
+        if (firstName) {
+            return User.update(user.userID, 'firstName', firstName)
+            .then(function() {
+                console.log('updated first name');
+                response.success.push("First name updated successfully.");
+            })
+            .catch(function(err) {
+                console.log(err);
+                response.error.push("Failed to update first name.");
+            });
+        }
+    }
+    
+    function updateLastName(lastName, user, response) {
+        if (lastName) {
+            return User.update(user.userID, 'lastName', lastName)
+            .then(function() {
+                console.log('updated last name');
+                response.success.push("Last name updated successfully.");
+            })
+            .catch(function(err) {
+                console.log(err);
+                response.error.push("Failed to update last name.");
+            });
+        }
+    }
     
     return router;
 }

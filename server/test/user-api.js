@@ -81,7 +81,7 @@ describe('/api/users', function() {
             var options = {
                 method: 'POST',
                 uri: baseUrl + '/users',
-                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
+                    body: {firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
                 json: true
             }
             return request(options) 
@@ -91,26 +91,12 @@ describe('/api/users', function() {
             });       
         });
         
-        it('should return an error if given invalid username', function() {
+        it('should return an error if given no username', function() {
             var options = {
                     method: 'POST',
                     uri: baseUrl + '/users',
-                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
+                    body: {email : 'ahudon@uw.edu', lastName : 'Hudon', password1 : 'password', password2 : "password"},
                     json: true
-            }
-            return request(options) 
-                .then(function(body) {
-                    console.log(body.error);
-                    return body.should.have.ownProperty('error');
-                });       
-        });
-
-        it('should return an error if given no username', function() {
-            var options = {
-                method: 'POST',
-                uri: baseUrl + '/users',
-                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
-                json: true
             }
             return request(options) 
                 .then(function(body) {
@@ -123,7 +109,7 @@ describe('/api/users', function() {
             var options = {
                     method: 'POST',
                     uri: baseUrl + '/users',
-                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
+                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'passwor', password2 : "passwor"},
                     json: true
             }
             return request(options) 
@@ -137,7 +123,7 @@ describe('/api/users', function() {
             var options = {
                 method: 'POST',
                 uri: baseUrl + '/users',
-                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
+                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password2 : "password"},
                 json: true
             }
             return request(options) 
@@ -151,7 +137,7 @@ describe('/api/users', function() {
             var options = {
                 method: 'POST',
                 uri: baseUrl + '/users',
-                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
+                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password'},
                 json: true
             }
             return request(options) 
@@ -165,7 +151,7 @@ describe('/api/users', function() {
             var options = {
                 method: 'POST',
                 uri: baseUrl + '/users',
-                    body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'password', password2 : "password"},
+                body: {email : 'ahudon@uw.edu', firstName : 'Alyssa', lastName : 'Hudon', password1 : 'passwordd', password2 : "password"},
                 json: true
             }
             return request(options) 
@@ -179,12 +165,36 @@ describe('/api/users', function() {
 
 describe('/api/users/me', function() {
     describe('api/users/me (GET)', function() {
-        it('should show user information');
-        it('should not show information for other users');
+        it('should show user information', function() {
+            var options = {
+                method: 'GET',
+                uri: baseUrl + '/users/me',
+                json: true
+            }
+            
+            return request(options) 
+                .then(function(body) {
+                    console.log(body);
+                    body.should.have.ownProperty('user');
+                });
+        });
     });
     
     describe('api/users/me (PUT)', function() {
-        it('should update user information');  
+        it('should update user first name', function() {
+            var options = {
+                method: 'PUT',
+                uri: baseUrl + '/users/me',
+                body: {firstName : "Aly"},
+                json: true
+            }
+            
+            return request(options) 
+                .then(function(body) {
+                    console.log(body);
+                    body.should.have.ownProperty('success');
+                });
+        });  
     });
     
     describe('api/users/me (DELETE)', function() {

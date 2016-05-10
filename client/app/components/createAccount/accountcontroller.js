@@ -3,7 +3,6 @@
 var accountController = angular.module('accountController', []);
 
 accountController.controller('AccountCtrl', function ($scope, User, $location) {
-  $scope.text = 'woooo';
   
   $scope.user = new User();
   
@@ -13,8 +12,10 @@ accountController.controller('AccountCtrl', function ($scope, User, $location) {
   // requires email, firstName, lastName, password1 and password2 as POST parameters
   $scope.createAccount = function(user) {
     User.save(user, function(response) {
+      console.log(response);
       if (response.success) {
-        $location.path('/journal');
+        console.log('should redirect');
+        $location.path('/app/home.html');
       }
     });
   }
