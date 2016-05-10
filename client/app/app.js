@@ -1,6 +1,6 @@
 'use strict';
 
-var beGreatfulApp = angular.module('beGreatfulApp', ['ngRoute','ngMaterial', 'loginController', 'accountController', 'entryController', 'navController','cardController', 'userService']);
+var beGreatfulApp = angular.module('beGreatfulApp', ['ngRoute','ngMaterial', 'loginController', 'accountController', 'navController', 'entryController','cardController', 'userService']);
 
 
 beGreatfulApp.config(['$routeProvider', 
@@ -16,10 +16,6 @@ function($routeProvider) {
         }).
         when('/journal', {
             templateUrl: 'app/components/journal/journal.html'
-        }).
-        when('/nav', {
-            templateUrl: 'app/components/SideNav/nav.html',
-            controller: 'NavCtrl'
         }).
         when('/card', {
             templateUrl: 'app/components/journalcard/journalcard.html',
