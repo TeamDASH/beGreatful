@@ -21,6 +21,10 @@ function($routeProvider) {
             templateUrl: 'app/components/journalcard/journalcard.html',
             controller: 'CardCtrl'
         }).
+        when('/list', {
+            templateUrl: 'app/components/journalcard/journallist.html',
+            controller: 'CardCtrl'
+        }).
         otherwise({
             redirectTo: '/login'
         });   

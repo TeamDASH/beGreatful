@@ -1,0 +1,22 @@
+<div ng-controller="CardCtrl as cardCtrl" ng-cloak>
+    <md-content>
+        <md-list>
+            <md-toolbar style="background-color:white;" layout="row" flex>
+                <h4 flex-offset="5">March</h4>
+                <md-button flex-offset="65"><md-icon md-svg-src="/assets/img/calendar.svg" aria-label="calendar"></md-icon></md-button>
+            </md-toolbar>
+            <md-divider></md-divider>
+            <md-list-item ng-repeat="user in users">
+                <md-content layout="row">
+                    
+                    <div style="background-color:teal;text-align:center;width:50px;height:50px;margin-top:5px;padding-top:5px;color:white;">17 MAR</div>
+                    <div style="margin:5px;color:#3E5060;" class="md-list-item-text" flex="85" flex-offset="10">
+                        lorem ipsmdkljksdjfla sdhfavkjhf dfjkghldkfjgh hskdfh lorem ipsmdkljksdjfla sdhfavkjhf dfjkghldkfjgh hskdfh lorem ipsmdkljksdjfla sdhfavkjhf dfjkghldkfjgh hskdfh    
+                    </div>
+                    <md-icon md-svg-src="/assets/img/good.svg" aria-label="calendar" flex="5"></md-icon>
+                </md-content>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

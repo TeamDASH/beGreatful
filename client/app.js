@@ -24,6 +24,7 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/components/journal/journal.html',
             authenticate: true
         });
+        
 });
 
 beGreatfulApp.run(
