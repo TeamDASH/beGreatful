@@ -1,7 +1,16 @@
 'use strict';
 
-var entryController = angular.module('entryController', []);
+var journalController = angular.module('journalController', []);
 
-entryController.controller('EntryCtrl', function ($scope, User, $location) {
-  
+journalController.controller('JournalCtrl', function ($scope, Entry, $location) {
+    $scope.entry = new Entry();
+    
+    $scope.createEntry = function(entry) {
+        Entry.save(entry, function(response) {
+            console.log(response);
+            if (response.success) {
+                $location.path('/journalboard')
+            }
+        });
+    }
 });

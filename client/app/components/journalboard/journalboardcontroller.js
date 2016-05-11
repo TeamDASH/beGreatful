@@ -1,6 +1,6 @@
 'use strict';
 
-var cardController = angular.module('cardController', []);
+var cardController = angular.module('journalBoardController', []);
 
 cardController.controller('CardCtrl', function($mdMedia, $scope, $location) {
   $scope.$watch(function() { return $mdMedia('xs'); }, function() {

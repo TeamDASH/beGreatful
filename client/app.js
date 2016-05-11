@@ -1,6 +1,6 @@
 'use strict';
 
-var beGreatfulApp = angular.module('beGreatfulApp', ['ngMaterial', 'loginController', 'accountController', 'ui.router', 'userService']);
+var beGreatfulApp = angular.module('beGreatfulApp', ['ngMaterial', 'loginController', 'accountController', 'journalController', 'journalBoardController', 'navController', 'ui.router', 'userService', 'entryService']);
 
 beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('journal');
@@ -9,12 +9,11 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
         .state('login', {
             url: '/login',
             templateUrl: '/app/components/login/login.html',
-            controller: 'LoginCtrl',
-            authenticate: false
+            controller: 'LoginCtrl'
         })
         .state('createaccount', {
             url: '/signup',
-            templateUrl: '/app/components/createAccount/createaccount.html',
+            templateUrl: '/app/components/createaccount/createaccount.html',
             controller: 'AccountCtrl',
             authenticate: false
             

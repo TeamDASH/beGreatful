@@ -1,18 +1,18 @@
 
 <h1>What are you grateful for today?</h1>
-<div layout="column" flex-gt-sm="80" flex-offset-gt-sm="10">
+<div layout="column" flex-gt-sm="80" flex-offset-gt-sm="10" ng-controller="JournalCtrl">
     <md-input-container>
         <label>Grateful Thought 1</label>
+        <textarea ng-model="entryThought1"></textarea>
+      </md-input-container>
+   
+       <md-input-container>
+        <label ng-model="entryThought2">Grateful Thought 2</label>
         <textarea></textarea>
       </md-input-container>
    
        <md-input-container>
-        <label>Grateful Thought 2</label>
-        <textarea></textarea>
-      </md-input-container>
-   
-       <md-input-container>
-        <label>Grateful Thought 3</label>
+        <label ng-model="entryThought3">Grateful Thought 3</label>
         <textarea></textarea>
       </md-input-container>
       
