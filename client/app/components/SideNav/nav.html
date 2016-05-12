@@ -1,38 +1,26 @@
-<div ng-controller="NavCtrl" layout="column">
-  <section layout="row" flex>
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-      <md-toolbar>
-        <h1 class="md-toolbar-tools">Sidenav Left</h1>
-      </md-toolbar>
-      <md-content layout-padding ng-controller="LeftCtrl">
-        <md-button ng-click="close()" class="md-primary" hide-gt-md>
-          Close Sidenav Left
-        </md-button>
-        <p hide-md show-gt-md>
-          This sidenav is locked open on your device. To go back to the default behavior,
-          narrow your display.
-        </p>
-      </md-content>
-    </md-sidenav>
-    <md-content flex layout-padding>
-      <div layout="column" layout-fill layout-align="top center">
-        <p>
-        The left sidenav will 'lock open' on a medium (>=960px wide) device.
-        </p>
-        <p>
-        The right sidenav will focus on a specific child element.
-        </p>
-        <div>
-          <md-button ng-click="toggleLeft()"
-            class="md-primary" hide-gt-md>
-            Toggle left
-          </md-button>
-        </div>
-        
-        
-      </div>
-      <div flex></div>
-    </md-content>
-    
-  </section>
-</div>
+<md-sidenav id="nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z4" layout="column" ng-cloak>
+            <div id="navLogo" layout="row" layout-align="center">
+                <span>be<span style="color:#17A697">Great</span>ful<md-icon md-svg-src="/assets/img/begreatful_logo.svg"></md-icon></span>
+            </div>
+            <md-list id="navBody" flex>
+                <md-list-item id="navButton">
+                    <md-button md-ink-ripple="#FF0000">journal</md-button>
+                </md-list-item>
+                <md-list-item id="navButton">
+                    <md-button>community</md-button>
+                </md-list-item >
+                <md-list-item id="navButton">
+                    <md-button>progress</md-button>
+                </md-list-item>
+                <md-list-item id="navButton">
+                    <md-button>account</md-button>
+                </md-list-item>
+                <md-list-item id="navButton">
+                    <md-button>logout</md-button>
+                </md-list-item>
+            </md-list>
+            <div id="footer" layout="column" text-align="center">
+                
+               <p>"Nothing can dim the light that shines within."-Maya Angelou</p>
+            </div>
+        </md-sidenav>

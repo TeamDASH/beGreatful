@@ -15,6 +15,11 @@ module.exports.Router = function(Entry) {
         var moreThoughts = req.body.moreThoughts;
         var entryMood = req.body.entryMood;
         
+        console.log('entry thoughts below');
+        console.log(entryThought1);
+        console.log(entryThought2);
+        console.log(entryThought3);
+        
         entryThought1 = entryThought1 ? entryThought1 : null;
         
         entryThought2 = entryThought2 ? entryThought2 : null;
@@ -27,7 +32,7 @@ module.exports.Router = function(Entry) {
             return res.json({error : 'Please add a thought for today.'});
         }
         // consider setting up enum for mood or only having certain valid values 
-        if (!entryMood || !validate.validField(entryMood)) {
+        if (!entryMood) {
             return res.json({error : 'Please select a mood.'});
         }
         

@@ -20,8 +20,19 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('journal', {
             url: '/journal',
-            templateUrl: 'app/components/journal/journal.html',
+            views: {
+                "": {
+                    templateUrl: 'app/components/journal/journal.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                }
+            },
             authenticate: true
+        })
+        .state('sidebar', {
+            url: '/sidebar',
+            templateUrl: 'app/components/sidenav/nav.html'
         });
         
 });
