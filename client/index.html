@@ -17,9 +17,9 @@
             <md-icon class="material-icons">menu</md-icon>
         </md-button>
     </md-toolbar>
-    <div layout="row" flex>
-        <div ui-view="sidebar"></div>
-        <!--<md-sidenav id="nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z4" layout="column" ng-cloak>
+    <div layout="row" style="height:100%" flex>
+        <div ui-view="sidebar" style="height:100%"></div>
+        <!--<md-sidenav id="nav"  ui-view="sidebar" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z4" layout="column" ng-cloak>
             <div id="navLogo" layout="row" layout-align="center">
                 <span>be<span style="color:#17A697">Great</span>ful<md-icon md-svg-src="/assets/img/begreatful_logo.svg"></md-icon></span>
             </div>
@@ -43,8 +43,8 @@
             <div id="footer" layout="column" text-align="center">
                 
                <p>"Nothing can dim the light that shines within."-Maya Angelou</p>
-            </div>
-        </md-sidenav>-->
+            </div>-->
+        </md-sidenav>
         
         <md-content id="content" flex>
             <div ui-view></div>

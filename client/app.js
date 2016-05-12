@@ -28,7 +28,7 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: "app/components/sidenav/nav.html"
                 }
             },
-            authenticate: true
+            authenticate: false
         })
         .state('sidebar', {
             url: '/sidebar',
