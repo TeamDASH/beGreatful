@@ -32,13 +32,36 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('board', {
             url: '/board',
+            views: {
+                "": {
+                    templateUrl: 'app/components/journalboard/journalboard.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                }
+            },
             templateUrl: 'app/components/journalboard/journalboard.html',
             controller: 'JournalCtrl',
             authenticate: false
         })
+        .state('list', {
+            url: '/list',
+            views: {
+                "": {
+                    templateUrl: 'app/components/journalcard/journallist.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                }
+            },
+            templateUrl: 'app/components/journalcard/journallist.html',
+            controller: 'CardCtrl',
+            authenticate: false
+        })
         .state('sidebar', {
             url: '/sidebar',
-            templateUrl: 'app/components/sidenav/nav.html'
+            templateUrl: 'app/components/sidenav/nav.html',
+            controller: 'NavCtrl'
         });
         
 });
