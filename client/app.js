@@ -30,6 +30,12 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             },
             authenticate: true
         })
+        .state('board', {
+            url: '/board',
+            templateUrl: 'app/components/journalboard/journalboard.html',
+            controller: 'JournalCtrl',
+            authenticate: false
+        })
         .state('sidebar', {
             url: '/sidebar',
             templateUrl: 'app/components/sidenav/nav.html'

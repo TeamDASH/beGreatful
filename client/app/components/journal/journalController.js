@@ -9,7 +9,9 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     
     $scope.entry.moreThoughts = "no more thoughts";
     
+    
     $scope.createEntry = function(entry) {
+        console.log(entry);
         Entry.save(entry, function(response) {
             console.log(response);
             if (response.success) {
