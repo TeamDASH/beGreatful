@@ -11,43 +11,12 @@
     
 </head>
 <body layout="column" ng-controller="NavCtrl">
-    <!--<div ng-if="x" ng-include="'/partial.html'"></div> -->
-    <md-toolbar id="tool" class="main-toolbar" layout="row" hide-gt-sm>
-        <md-button class="menu" aria-label="menu" ng-click="toggleLeft()">
-            <md-icon class="material-icons">menu</md-icon>
-        </md-button>
-    </md-toolbar>
+   
+   <div ui-view="topbar"></div>
     <div layout="row" style="height:100%" flex>
-        <div ui-view="sidebar" style="height:100%"></div>
-        <!--<md-sidenav id="nav"  ui-view="sidebar" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z4" layout="column" ng-cloak>
-            <div id="navLogo" layout="row" layout-align="center">
-                <span>be<span style="color:#17A697">Great</span>ful<md-icon md-svg-src="/assets/img/begreatful_logo.svg"></md-icon></span>
-            </div>
-            <md-list id="navBody" flex>
-                <md-list-item id="navButton">
-                    <md-button md-ink-ripple="#FF0000">journal</md-button>
-                </md-list-item>
-                <md-list-item id="navButton">
-                    <md-button>community</md-button>
-                </md-list-item >
-                <md-list-item id="navButton">
-                    <md-button>progress</md-button>
-                </md-list-item>
-                <md-list-item id="navButton">
-                    <md-button>account</md-button>
-                </md-list-item>
-                <md-list-item id="navButton">
-                    <md-button>logout</md-button>
-                </md-list-item>
-            </md-list>
-            <div id="footer" layout="column" text-align="center">
-                
-               <p>"Nothing can dim the light that shines within."-Maya Angelou</p>
-            </div>-->
-        </md-sidenav>
-        
+        <div ui-view="sidebar" style="height:100%"></div> 
         <md-content id="content" flex>
-            <div ui-view></div>
+            <div ui-view style="height:100%"></div>
         </md-content>
     </div>
  

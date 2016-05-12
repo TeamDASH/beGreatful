@@ -26,6 +26,9 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
                 },
                 "sidebar": {
                     templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
                 }
             },
             authenticate: false
@@ -38,6 +41,9 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
                 },
                 "sidebar": {
                     templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
                 }
             },
             templateUrl: 'app/components/journalboard/journalboard.html',
@@ -52,6 +58,9 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
                 },
                 "sidebar": {
                     templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
                 }
             },
             templateUrl: 'app/components/journalcard/journallist.html',
@@ -62,7 +71,13 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/sidebar',
             templateUrl: 'app/components/sidenav/nav.html',
             controller: 'NavCtrl'
+        })
+        .state('topbar', {
+            url: '/topbar',
+            templateUrl: 'app/components/sidenav/topnav.html',
+            controller: 'NavCtrl'
         });
+      
         
 });
 

@@ -1,26 +1,31 @@
 <!--Work-in-progress login page-->
-<div class="container" ng-controller="LoginCtrl">
-  <md-card flex="40" flex-offset="30">
-    <form class="form-signin" novalidate>
-      <md-card-title>Please sign in</md-card-title>
-      <md-card>
+<div class="container" ng-controller="LoginCtrl" style="height:100%">
+  <div style="background-color:#354458;color:white;min-height:100%" flex-gt-sm="40" flex-offset-gt-sm="30">
+    <form class="form-signin" layout="column" layout-padding novalidate> 
+      <div id="navLogo" layout="row" layout-align="center">
+        <span>be<span style="color:#17A697">Great</span>ful<md-icon md-svg-src="/assets/img/begreatful_logo.svg"></md-icon></span>
+      </div>
+      
       <md-input-container>
-      <label for="email" class="sr-only">Email address</label>
-      <input type="email" id="email" class="form-control" ng-model="user.email" autofocus>
+        <label for="email" class="sr-only" style="color:white;">Email address</label>
+        <input type="email" id="email" class="form-control" style="color:white;border-color:white;" ng-model="user.email" autofocus>
       </md-input-container>
       
       <md-input-container>
-      <label for="password" class="sr-only">Password</label>
-      <input type="password" id="password" class="form-control" ng-model="user.password">
+        <label for="password" class="sr-only" style="color:white;">Password</label>
+        <input type="password" id="password" class="form-control" style="color:white;border-color:white;" ng-model="user.password">
       </md-input-container>
       
-      <a href="#/signup" layout-align="center">Create an Account</a>
-      
-      <md-button class="md-raised md-primary" type="submit" ng-click="isLoggedIn()">Check Logged In</md-button>
-
-      
-      <md-button class="md-raised md-primary" type="submit" ng-click="login(user)">Sign in</md-button>
+      <div style="padding:0;" layout="row" layout-align="center">
+        <md-button class="md-raised" style="background-color:#17A697;color:white;" type="submit" ng-click="login(user)">LOGIN</md-button>
+      </div>
+      <div style="padding:0;" layout="row" layout-align="center">
+        <p>or</p>
+      </div> 
+      <div layout="row" layout-align="center">
+        <a href="#/signup" layout-align="center" style="color:#17A697;">sign up</a>
+      </div> 
     </form>
-    <md-card>
+   </div>
     
 </div>
