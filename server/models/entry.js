@@ -11,7 +11,7 @@ var entry = {
         console.log('attribute' + attribute);
         console.log('value' + value);
         console.log('looking for entry in database');
-        var sql = 'select * from entry where ??=?';
+        var sql = 'select * from entry where ??=? order by entryTime desc ';
         return connPool.queryAsync(sql, [attribute, value])
             .then(function(rows) {
                 console.log('trying to return something');
