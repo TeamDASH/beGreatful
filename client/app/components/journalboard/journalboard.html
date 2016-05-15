@@ -1,36 +1,50 @@
-<div style="margin-left:10px;">
-<div class="md-display-1">Journal Entries</div>
-<div ng-controller="CardCtrl as cardCtrl">   
-  <div class='md-padding' layout="row" layout-wrap>
-        <md-card style="width: 275px;" ng-repeat="user in users" layout="column">
-          <md-card-header layout="row" style="padding:0;font-size:24px;color:white;">
-           <md-card-avatar style="background-color:#17A697;height:60px;width:60px;text-align:center;" layout="center">Mar 1</md-card-avatar>
-           
-          </md-card-header>
-          <md-card-content flex>
-              <md-content style="height:200px;">
-              <md-list layout="column" style="font-size:14px;" flex>
-                 
-                  <md-list-item>
-                      <md-icon class="md-avatar-icon">1</md-icon>
-                      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
-                  </md-list-item>
-                  <md-list-item>
-                      <md-icon class="md-avatar-icon">2</md-icon>
-                      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
-                  </md-list-item>
-                  <md-list-item>
-                      <md-icon class="md-avatar-icon">3</md-icon>
-                      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
-                  </md-list-item>
-              </md-list>
-              </md-content>
-            
-          </md-card-content>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button>View</md-button>
-          </div>
-        </md-card>
-      </div>
+<div style="margin:10px;" layout="column">
+    <div style="background-color:white;height:50px;padding:0;" layout="row" layout-align="end">
+        <h2>March 13-19, 2016</h2>
+        <span flex></span>
+        <md-button style="padding:0px;margin:0px;"><md-icon md-svg-src="/assets/img/calendar.svg" aria-label="calendar"></md-icon></md-button>
+    
     </div>
+    <md-divider style="margin-bottom:20px;"></md-divider>
+    <div ng-controller="CardCtrl as cardCtrl">   
+        <div class='md-padding' layout="row" layout-wrap>
+                <md-card class="md-body-1" style="width: 285px;" ng-repeat="user in users" layout="column">
+                
+                    <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
+                        <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>15</span></md-card-avatar>
+                        <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
+                            <span class="md-headline" style="text-align:right;margin-right:5px;" flex>WEDNESDAY</span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    
+                    <md-card-content style="padding:0;"flex>
+                        <md-content style="height:220px;">
+                        <md-list layout="column" style="font-size:14px;"flex>
+                            
+                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/1.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+                            </md-list-item>
+                            
+                            <md-list-item style="margin-bottom:5px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/2.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+                            </md-list-item>
+                            
+                            <md-list-item layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/3.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore e</span>
+                            </md-list-item>
+                        </md-list>
+                        </md-content>
+                        
+                    </md-card-content>
+                    
+                    <div class="md-actions" layout="row" style="height:20px;">
+                        <span flex></span>
+                        <md-icon md-svg-src="/assets/img/good.svg" aria-label="calendar"></md-icon>
+                    </div>
+                </md-card>
+            </div>
+        </div>
 </div>
