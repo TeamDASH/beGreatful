@@ -3,7 +3,6 @@
 var beGreatfulApp = angular.module('beGreatfulApp', ['ngMaterial', 'loginController', 'accountController', 'journalController', 'journalBoardController', 'navController', 'ui.router', 'userService', 'entryService']);
 
 beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('journal');
     
     $stateProvider
         .state('login', {
@@ -31,7 +30,33 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: "app/components/sidenav/topnav.html"
                 }
             },
+            controller: 'JournalCtrl',
             authenticate: false
+        })
+        .state('journal.entryone', {
+            url: '/entryone',
+            templateUrl: 'app/components/journal/journal-1.html',
+            authenticate: false           
+        })    
+        .state('journal.entrytwo', {
+            url: '/entrytwo',
+            templateUrl: '/app/components/journal/journal-2.html',
+            authenticate: false           
+        })
+        .state('journal.entrythree', {
+            url: '/entrythree',
+            templateUrl: '/app/components/journal/journal-3.html',
+            authenticate: false           
+        })
+        .state('journal.thoughts', {
+            url: '/morethoughts',
+            templateUrl: '/app/components/journal/journal-thoughts.html',
+            authenticate: false           
+        })
+        .state('journal.check', {
+            url: '/checkin',
+            templateUrl: '/app/components/journal/journal-check.html',
+            authenticate: false           
         })
         .state('board', {
             url: '/board',
@@ -77,8 +102,7 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/components/sidenav/topnav.html',
             controller: 'NavCtrl'
         });
-      
-        
+      $urlRouterProvider.otherwise('/journal/entryone');
 });
 
 beGreatfulApp.run(

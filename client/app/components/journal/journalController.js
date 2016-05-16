@@ -8,6 +8,7 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     $scope.entry.entryMood = "feliz";
     
     $scope.entry.moreThoughts = "no more thoughts";
+    $scope.tags=['Apple', 'Banana', 'Orange'];
     
     
     $scope.createEntry = function(entry) {
@@ -20,3 +21,14 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
         });
     }
 });
+
+function DemoCtrl ($timeout, $q) {
+    var self = this;
+
+    //self.readonly = false;
+
+    // Lists of fruit names and Vegetable objects
+    self.fruitNames = ['Apple', 'Banana', 'Orange'];
+    
+    
+  }

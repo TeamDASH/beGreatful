@@ -61,3 +61,30 @@ h4 {
 .gridListdemoBasicUsage md-grid-tile {
     transition: all 400ms ease-out 50ms;
 }
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons a               { color:grey; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; text-decoration:none;}
+#status-buttons a:hover         { text-decoration:none; }
+#status-buttons span            { background:gray; display:block; height:10px; margin:0 12px 10px; padding-top:5px; width:15px;
+    border-radius:50%; }
+
+/* active buttons */
+#status-buttons a.active span   { background:#00BC8C; }
+
+.chipsdemoBasicUsage .errors {
+  font-size: 12px;
+  color: #dd2c00;
+  margin-top: 10px; }
+
+.chipsdemoBasicUsage .custom-chips .md-chip {
+  position: relative; }
+  .chipsdemoBasicUsage .custom-chips .md-chip .md-chip-remove-container {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    margin-right: 0;
+    height: 24px; }
+
+  .chipsdemoBasicUsage .custom-chips .md-chip:not(.md-readonly) md-chip-template {
+    padding-right: 5px; }

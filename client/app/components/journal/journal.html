@@ -1,27 +1,22 @@
 
-<div style="margin-left:10px;">
-<div class="md-display-1">What are you grateful for today?</div>
-<div layout="column" flex-gt-sm="80" flex-offset-gt-sm="10" ng-controller="JournalCtrl">
+<div style="margin-left:10px;" layout="column" ng-controller="JournalCtrl as ctrl">
+<div class="md-display-1" style="margin-bottom:20px;">What are you grateful for today?</div>
+
      
-    <md-input-container>
-        <label>Grateful Thought 1</label>
-        <textarea ng-model="entry.entryThought1"></textarea>
-      </md-input-container>
-   
-       <md-input-container>
-        <label ng-model="entry.entryThought2">Grateful Thought 2</label>
-        <textarea></textarea>
-      </md-input-container>
-   
-       <md-input-container>
-        <label ng-model="entry.entryThought3">Grateful Thought 3</label>
-        <textarea></textarea>
-      </md-input-container>
-      
-      <div layout="row" layout-align="center">
-      <md-button class="md-raised md-primary" ng-click="createEntry(entry)">Log</md-button>
-      </div>
+<md-content style="padding:30px;">
+        <div ui-view></div>
+</md-content>
+    
+     <div id="status-buttons" class="text-center" layout="row" layout-align="center">
+        <div >
+          <a ui-sref-active="active" ui-sref=".entryone"><span></span> Thought 1</a>
+          <a ui-sref-active="active" ui-sref=".entrytwo"><span></span> Thought 2</a>
+          <a ui-sref-active="active" ui-sref=".entrythree"><span></span> Thought 3</a>
+          <a ui-sref-active="active" ui-sref=".thoughts"><span></span> More</a>
+          <a ui-sref-active="active" ui-sref=".check"><span></span> Check</a>
+          </div>
+     </div>
   
 </div>
-</div>
+
 

@@ -1,0 +1,17 @@
+<div style="margin-left:10px;margin-right:10px;" layout="column">
+   <div layout="row" layout-align="none start">
+        <img ng-src="/assets/img/2.svg" style="margin-right:5px;width:20px;height:20px;" flex="5">
+        <md-input-container flex="95" layout-fill>
+                <label>Grateful Thought 2</label>
+                <textarea ng-model="entry.entryThought2"></textarea>
+        </md-input-container>
+    </div>
+     <div layout="row">
+        <md-button style="padding:0px;margin:0px;"><md-icon md-svg-src="/assets/img/camera.svg" style="padding:0px;margin:0px;" aria-label="picture"></md-icon></md-button>
+        <md-icon md-svg-src="/assets/img/tag.svg" style="" aria-label="tag"></md-icon>
+        <md-chips ng-model="tags" style="font-size:10px;" layout-fill></md-chips>
+    </div>
+    <div layout="row" layout-align="center" style="padding:10px;">
+      <a ui-sref="journal.entrythree"><span>NEXT</span></a>
+      </div>
+</div>
