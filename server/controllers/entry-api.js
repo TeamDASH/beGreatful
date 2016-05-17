@@ -57,7 +57,8 @@ module.exports.Router = function(Entry) {
     router.get('/entries', function(req, res, next) {
         var user = req.user;
         
-        return Entry.getInfo('userID', user.userID)
+        if (user)  {
+            return Entry.getInfo('userID', user.userID)
             .then(function(data) {
                 console.log(data);
                 res.json({entries : data})
@@ -66,6 +67,9 @@ module.exports.Router = function(Entry) {
                 res.status(500);
                 res.json({error: 'Sorry, we were unable to access your entries. Please try again later.'});
             });
+        } else {
+            res.json({error: 'Sorry, we were unable to access your entries. Please try again later.'});
+        }     
     });
 
     router.get('/entries/:id', function(req, res, next) {
@@ -78,7 +82,6 @@ module.exports.Router = function(Entry) {
                 res.json({entry: data});
             })
             .catch(function() {
-                res.status(500);
                 res.json({error: 'Sorry, we were unable to find your entry. Please try again later.'});
             });      
     });
