@@ -9,7 +9,12 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     
     $scope.entry.moreThoughts = "no more thoughts";
     $scope.tags=['Apple', 'Banana', 'Orange'];
+    $scope.menuItems = ['great','good','okay','poor','awful'];
+    $scope.emotion = $scope.menuItems[0];
     
+    $scope.setActive = function(menuItem) {
+        $scope.emotion = menuItem;
+    }
     
     $scope.createEntry = function(entry) {
         console.log(entry);
@@ -22,7 +27,7 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     }
 });
 
-function DemoCtrl ($timeout, $q) {
+/*function DemoCtrl ($timeout, $q) {
     var self = this;
 
     //self.readonly = false;
@@ -31,4 +36,4 @@ function DemoCtrl ($timeout, $q) {
     self.fruitNames = ['Apple', 'Banana', 'Orange'];
     
     
-  }
+  }*/
