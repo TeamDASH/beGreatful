@@ -1,18 +1,28 @@
-<div style="margin-left:10px;margin-right:10px;" layout="column">
+<div layout="column">
+    <div style="margin-bottom:30px;" layout-gt-xs="row" layout-xs="column">
+        <div class="md-display-1">What are you grateful for today?</div>
+        <span flex></span>
+        <span layout-gt-xs="column" layout-align="end center">Monday, February 27</span>
+    </div>
+    
     <div layout="row" layout-align="none start">
         <img ng-src="/assets/img/1.svg" style="margin-right:5px;width:20px;height:20px;" flex="5">
-        <md-input-container flex="95" layout-fill>
-                <label>Grateful Thought 1</label>
+        <div flex="95" layout='column' layout-fill>
+            <span style="margin-bottom:15px;">Grateful Thought</span>
+            <md-input-container layout-fill>
+                <label>I am grateful for...</label>
                 <textarea ng-model="entry.entryThought1"></textarea>
-        </md-input-container>
+            </md-input-container>
+            
+        </div>
+       
     </div>
     <div layout="row">
         <md-button style="padding:0px;margin:0px;"><md-icon md-svg-src="/assets/img/camera.svg" style="padding:0px;margin:0px;" aria-label="picture"></md-icon></md-button>
         <md-icon md-svg-src="/assets/img/tag.svg" style="" aria-label="tag"></md-icon>
         <md-chips ng-model="tags" style="font-size:10px;" layout-fill></md-chips>
     </div>
-   
-    <div layout="row" layout-align="center" style="padding:10px;">
-      <a ui-sref="journal.entrytwo"><span>NEXT</span></a>
-      </div>
+   <div layout="row" layout-align="center" style="margin:10px;">
+      <md-button style="background-color:teal;" class="md-raised md-primary" ui-sref="journal.entrytwo">NEXT</md-button>
+    </div>
 </div>

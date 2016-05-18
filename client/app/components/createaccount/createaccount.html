@@ -1,39 +1,53 @@
-<div class="container" ng-controller="AccountCtrl">
-    <div class="row">
-        <form role="form" novalidate>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <div class="input-group">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="user.email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First name" ng-model="user.firstName">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last name" ng-model="user.lastName">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password1">Password</label>
-                    <div class="input-group">
-                        <input type="password" class="form-control" id="password1" name="password1" placeholder="Password" ng-model="user.password1">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password2">Confirm password</label>
-                    <div class="input-group">
-                        <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" ng-model="user.password2">
-                    </div>
-                </div>
-                <button type="button" ng-click="createAccount(user)" id="submit" class="btn btn-info pull-right">Submit</button>
+<div class="container" ng-controller="AccountCtrl" style="height:100%">
+    <div style="background-color:#354458;color:teal;min-height:100%;padding:5px;" flex-gt-sm="40" flex-offset-gt-sm="30">
+        <form role="form" novalidate layout-fill>
+            <div id="navLogo" layout="row" layout-align="center">
+                <span>be<span style="color:#17A697">Great</span>ful<md-icon md-svg-src="/assets/img/begreatful_logo.svg"></md-icon></span>
             </div>
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <label for="email" style="color:white;">Email</label>                      
+                        <input type="email" style="color:white;border-color:white;"class="form-control" id="email"  ng-model="user.email">                       
+                    </md-input-container>
+                </div>
+                
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <label for="firstName" style="color:white;">First Name</label>                      
+                        <input type="text" style="color:white;border-color:white;" class="form-control" id="firstName" ng-model="user.firstName">                    
+                    </md-input-container>
+                </div>
+                
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <label for="lastName" style="color:white;">Last Name</label>                  
+                        <input type="text" style="color:white;border-color:white;" class="form-control" id="lastName" ng-model="user.lastName">
+                    </md-input-container>
+                </div>
+                
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <label for="password1" style="color:white;">Password</label>
+                        <input type="password" style="color:white;border-color:white;" class="form-control" id="password1" ng-model="user.password1">
+                    </md-input-container>
+                </div>
+                
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                    <label for="password2" style="color:white;">Confirm password</label>
+                   
+                        <input type="password" style="color:white;border-color:white;" class="form-control" id="password2" ng-model="user.password2">
+              
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="center">
+                    <div layout="column">
+                        <md-button style="background-color:teal;color:white;"ng-click="createAccount(user)" id="submit">SIGN UP</md-button>
+                    </div>
+                </div>
+                <div layout="row" layout-align="center">
+                    <span style="color:white;">Already have an account? <a href="#/login" layout-align="center" style="color:#17A697;">Login</a></span>
+                </div>
         </form>
     </div>
 </div>
