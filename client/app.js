@@ -101,6 +101,48 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/topbar',
             templateUrl: 'app/components/sidenav/topnav.html',
             controller: 'NavCtrl'
+        })
+        .state('community', {
+            url: '/community',
+            views: {
+                "": {
+                    templateUrl: 'app/components/community/community.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
+                }
+            }
+        })
+        .state('progress', {
+            url: '/progress',
+            views: {
+                "": {
+                    templateUrl: 'app/components/progress/progress.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
+                }
+            }
+        })
+        .state('account', {
+            url: '/me',
+            views: {
+                "": {
+                    templateUrl: 'app/components/account/account.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
+                }
+            }
         });
       $urlRouterProvider.otherwise('/journal/entryone');
 });
