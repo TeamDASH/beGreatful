@@ -8,12 +8,19 @@
       
       <md-input-container>
         <label for="email" class="sr-only" style="color:white;">Email address</label>
-        <input type="email" id="email" name="emailField" class="form-control" style="color:white;border-color:white;" ng-model="user.email">
+        <input type="email" id="email" name="emailField" class="form-control" style="color:white;border-color:white;" ng-model="user.email" required md-no-asterisk>
+        <div ng-messages="formLogin.emailField.$error" role="alert">
+            <div ng-message="required">Please enter a value for this field.</div>
+            <div ng-message="email">This field must be a valid email address.</div>
+        </div>  
       </md-input-container>
       
       <md-input-container>
         <label for="password" class="sr-only" style="color:white;">Password</label>
-        <input type="password" id="password" name="passwordField" class="form-control" style="color:white;border-color:white;" ng-model="user.password">
+        <input type="password" id="password" name="passwordField" class="form-control" style="color:white;border-color:white;" ng-model="user.password" required md-no-asterisk>
+        <div ng-messages="formLogin.passwordField.$error" role="alert">
+            <div ng-message="required">Please enter a value for this field.</div>
+        </div>  
       </md-input-container>
       
       <div style="padding:0;" layout="row" layout-align="center">
