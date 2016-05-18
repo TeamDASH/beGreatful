@@ -18,7 +18,6 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             
         })
         .state('journal', {
-            url: '/journal',
             views: {
                 "": {
                     templateUrl: 'app/components/journal/journal.html'
@@ -144,7 +143,7 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         });
-      $urlRouterProvider.otherwise('/journal/entryone');
+      $urlRouterProvider.otherwise('/entryone');
 });
 
 beGreatfulApp.run(
