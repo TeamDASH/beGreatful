@@ -8,9 +8,9 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     $scope.entry.entryMood = "feliz";
     
     $scope.entry.moreThoughts = "no more thoughts";
-    $scope.tags=['Apple', 'Banana', 'Orange'];
+    $scope.tags=['Family', 'Nature', 'Friends'];
     $scope.menuItems = ['great','good','okay','poor','awful'];
-    $scope.emotion = $scope.menuItems[0];
+    $scope.emotion = '';
     
     $scope.setActive = function(menuItem) {
         $scope.emotion = menuItem;
@@ -27,13 +27,3 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     }
 });
 
-/*function DemoCtrl ($timeout, $q) {
-    var self = this;
-
-    //self.readonly = false;
-
-    // Lists of fruit names and Vegetable objects
-    self.fruitNames = ['Apple', 'Banana', 'Orange'];
-    
-    
-  }*/
