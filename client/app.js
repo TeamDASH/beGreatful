@@ -158,9 +158,8 @@ beGreatfulApp.run(
                 }
             })
         }
-        // if (toState.authenticate && !Auth) {
-        //     $state.transitionTo('login');
-        //     event.preventDefault();
-        // }
     });
 });
+
+
+
