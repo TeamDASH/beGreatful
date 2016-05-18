@@ -1,4 +1,16 @@
-<div style="margin-left:10px;margin-right:10px;" layout="column" ng-controller="JournalCtrl as ctrl">
+<div layout="column" >
+  
+  <div style="margin-bottom:30px;" layout-gt-xs="row" layout-xs="column">
+        <div class="md-display-1">What are you grateful for today?</div>
+        <span flex></span>
+        <span layout-gt-xs="column" layout-align="end center">Monday, February 27</span>
+    </div>
+  
+   <div layout="row">
+        <img src="/assets/img/face.svg" alt="face" style="width:30px;height:30px;margin-right:5px;">
+        <span style="height:30px;" layout="column" layout-align="center center">Emotional Check-in</span>
+    </div>
+  
   <div layout="row">  
    <md-card flex-offset-gt-sm="35" flex-gt-sm="30" flex-sm="100" flex-xs="100">
       <md-list ng-repeat="item in menuItems" style="padding:0;">
@@ -8,10 +20,11 @@
           <span>{{item}}</span>
           <span flex></span>
         </md-list-item>
+        <md-divider></md-divider>
      </md-list>      
    </md-card>
    </div>
-    <div layout="row" layout-align="center">
-      <md-button class="md-raised md-primary" ng-click="createEntry(entry)">Log</md-button>
+    <div style="margin:10px;" layout="row" layout-align="center">
+      <md-button style="background-color:teal;" class="md-raised md-primary" ng-click="createEntry(entry)">Log</md-button>
     </div>
 </div>
