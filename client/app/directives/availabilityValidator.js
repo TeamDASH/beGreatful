@@ -1,9 +1,11 @@
-beGreatfulApp.directive('availabilityValidator', 
+var availabilityValidator = angular.module('availabilityValidator', []);
+
+availabilityValidator.directive('availabilityValidator', 
 ['$http', function($http) {
         return {
             require : 'ngModel',
             link : function(scope, element, attrs, ngModel) {
-                var url = attrs.availabilityValidator;
+                var url = attrs.availabilityValidator + '/';
                 
                 function setLoading(bool) {
                     ngModel.$setValidity('loading', !bool);
@@ -13,6 +15,8 @@ beGreatfulApp.directive('availabilityValidator',
                     ngModel.$setValidity('available', bool);
                 }
                 
+                console.log('trying to do directive stuff');
+                
                 ngModel.$parsers.push(function(reqEmail) {
                     if (!reqEmail || reqEmail.length == 0) {
                         return;
@@ -21,17 +25,20 @@ beGreatfulApp.directive('availabilityValidator',
                     setLoading(true);                 
                     setAvailable(false);
                     
-                    $http.get(url + reqEmail, {})
-                        .success(function() {
-                            setLoading(false);
-                            setAvailable(true);
-                        })
-                        .error(function() {
-                            setLoading(false);
-                            setAvailable(false);
+                        $http.get(url + reqEmail, {})
+                        .then(function(response) {
+                            console.log(response.data);
+                            if (response.data.error) {
+                                console.log('setting error message to show');
+                                setLoading(false);
+                                setAvailable(false);
+                            } else {
+                                setLoading(false);
+                                setAvailable(true);
+                            }
                         });
                     return reqEmail;
-                });z
+                });
             }
         }
     }
