@@ -15,7 +15,7 @@ accountController.controller('AccountCtrl', function ($scope, User, $location) {
       console.log(response);
       if (response.success) {
         console.log('should redirect');
-        $location.path('/login');
+        $location.path('/journal/entryone');
       }
     });
   }

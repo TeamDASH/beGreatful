@@ -113,6 +113,20 @@ module.exports.Router = function(User) {
         res.json({user : user});
     });
     
+    router.get('/users/:email', function(req, res, next) {
+        var email = req.params.email;
+        console.log(email);
+        
+        User.getInfo('email', email)
+            .then(function(user) {
+                if (user) {
+                    res.json({error : 'We already have an account with that email address.'})
+                } else {
+                    res.json({success : 'Email is free!'})
+                }
+            })
+    });
+    
     // updates user profile information
     router.put('/users/me', function(req, res, next) {
         var password1 = req.body.password1;

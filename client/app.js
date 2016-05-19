@@ -1,6 +1,6 @@
 'use strict';
 
-var beGreatfulApp = angular.module('beGreatfulApp', ['ngMaterial', 'loginController', 'accountController', 'journalController', 'journalBoardController', 'navController', 'ui.router', 'userService', 'entryService']);
+var beGreatfulApp = angular.module('beGreatfulApp', ['ngMaterial', 'ngMessages', 'loginController', 'accountController', 'journalController', 'journalBoardController', 'navController', 'ui.router', 'userService', 'entryService']);
 
 beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
     
@@ -8,7 +8,8 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
         .state('login', {
             url: '/login',
             templateUrl: '/app/components/login/login.html',
-            controller: 'LoginCtrl'
+            controller: 'LoginCtrl',
+            authenticate: false
         })
         .state('createaccount', {
             url: '/signup',
@@ -18,7 +19,6 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             
         })
         .state('journal', {
-            url: '/journal',
             views: {
                 "": {
                     templateUrl: 'app/components/journal/journal.html'
@@ -46,17 +46,17 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
         .state('journal.entrythree', {
             url: '/entrythree',
             templateUrl: '/app/components/journal/journal-3.html',
-            authenticate: true           
+            authenticate: true          
         })
         .state('journal.thoughts', {
             url: '/morethoughts',
             templateUrl: '/app/components/journal/journal-thoughts.html',
-            authenticate: true           
+            authenticate: true          
         })
         .state('journal.check', {
             url: '/checkin',
             templateUrl: '/app/components/journal/journal-check.html',
-            authenticate: true           
+            authenticate: true         
         })
         .state('board', {
             url: '/board',
@@ -101,8 +101,53 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/topbar',
             templateUrl: 'app/components/sidenav/topnav.html',
             controller: 'NavCtrl'
+        })
+        .state('community', {
+            url: '/community',
+            views: {
+                "": {
+                    templateUrl: 'app/components/community/community.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
+                }
+            },
+            authenticate: true
+        })
+        .state('progress', {
+            url: '/progress',
+            views: {
+                "": {
+                    templateUrl: 'app/components/progress/progress.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
+                }
+            },
+            authenticate: true
+        })
+        .state('account', {
+            url: '/me',
+            views: {
+                "": {
+                    templateUrl: 'app/components/account/account.html'
+                },
+                "sidebar": {
+                    templateUrl: "app/components/sidenav/nav.html"
+                },
+                "topbar": {
+                    templateUrl: "app/components/sidenav/topnav.html"
+                }
+            },
+            authenticate: true
         });
-      $urlRouterProvider.otherwise('/journal/entryone');
+      $urlRouterProvider.otherwise('/entryone');
 });
 
 beGreatfulApp.run(
@@ -116,9 +161,9 @@ beGreatfulApp.run(
                 }
             })
         }
-        // if (toState.authenticate && !Auth) {
-        //     $state.transitionTo('login');
-        //     event.preventDefault();
-        // }
     });
 });
+
+
+
+
