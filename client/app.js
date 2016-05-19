@@ -31,32 +31,32 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             },
             controller: 'JournalCtrl',
-            authenticate: false
+            authenticate: true
         })
         .state('journal.entryone', {
             url: '/entryone',
             templateUrl: 'app/components/journal/journal-1.html',
-            authenticate: false           
+            authenticate: true           
         })    
         .state('journal.entrytwo', {
             url: '/entrytwo',
             templateUrl: '/app/components/journal/journal-2.html',
-            authenticate: false           
+            authenticate: true          
         })
         .state('journal.entrythree', {
             url: '/entrythree',
             templateUrl: '/app/components/journal/journal-3.html',
-            authenticate: false           
+            authenticate: true           
         })
         .state('journal.thoughts', {
             url: '/morethoughts',
             templateUrl: '/app/components/journal/journal-thoughts.html',
-            authenticate: false           
+            authenticate: true           
         })
         .state('journal.check', {
             url: '/checkin',
             templateUrl: '/app/components/journal/journal-check.html',
-            authenticate: false           
+            authenticate: true           
         })
         .state('board', {
             url: '/board',
@@ -73,7 +73,7 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             },
             templateUrl: 'app/components/journalboard/journalboard.html',
             controller: 'JournalCtrl',
-            authenticate: false
+            authenticate: true
         })
         .state('list', {
             url: '/list',
@@ -90,7 +90,7 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             },
             templateUrl: 'app/components/journalcard/journallist.html',
             controller: 'CardCtrl',
-            authenticate: false
+            authenticate: true
         })
         .state('sidebar', {
             url: '/sidebar',
