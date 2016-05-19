@@ -12,11 +12,11 @@
     </div>
   
   <div layout="row">  
-   <md-card flex-offset-gt-sm="35" flex-gt-sm="30" flex-sm="100" flex-xs="100">
+   <md-card flex-offset-gt-sm="35" flex-gt-sm="30" flex-sm="100" flex-xs="100" ng-cloak>
       <md-list ng-repeat="item in menuItems" style="padding:0;">
         <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive(item); entry.entryMood = item" ng-class="{activeOption: emotion === item}">
           <span flex></span>
-          <img ng-src="/assets/img/{{item}}.svg" style="width:50px;height:50px;margin-right:10px;" alt="{{item}}">
+          <md-icon md-svg-src="/assets/img/{{item}}.svg" style="width:50px;height:50px;margin-right:10px;" alt="{{item}}"></md-icon>
           <span>{{item}}</span>
           <span flex></span>
         </md-list-item>
