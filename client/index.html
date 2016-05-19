@@ -12,11 +12,11 @@
 </head>
 <body layout="column" ng-controller="NavCtrl">
    
-   <div ui-view="topbar"></div>
+   <div ng-cloak ui-view="topbar"></div>
     <div layout="row" style="height:100%" flex>
-        <div ui-view="sidebar" style="height:100%"></div> 
+        <div ng-cloak ui-view="sidebar" style="height:100%"></div> 
         <md-content id="content" flex>
-            <div ui-view style="height:100%"></div>
+            <div ng-cloak ui-view style="height:100%"></div>
         </md-content>
     </div>
  

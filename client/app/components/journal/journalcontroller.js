@@ -20,8 +20,8 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
         console.log(entry);
         Entry.save(entry, function(response) {
             console.log(response);
-            if (response.success) {
-                $location.path('/journalboard')
+            if (response.entry) {
+                $location.path('/board')
             }
         });
     }
