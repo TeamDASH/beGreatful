@@ -8,8 +8,7 @@
     <md-divider style="margin-bottom:20px;"></md-divider>
     <div>   
         <div class='md-padding' layout="row" layout-wrap >
-                <md-card class="md-body-1" style="width: 285px;" ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" layout="column">
-                
+                <md-card class="md-body-1" style="width: 285px;" ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" layout="column">          
                     <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
                         <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{currDate.getDate()}}</span></md-card-avatar>
                         <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
@@ -25,7 +24,6 @@
                             </md-list-item>
                         </md-list>
                         </md-content>
-                        
                     </md-card-content>
                 </md-card>
             

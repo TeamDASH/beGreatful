@@ -7,7 +7,7 @@
                 <div layout="row" layout-align="center">
                     <md-input-container flex>
                         <label for="email" style="color:white;">Email</label>                      
-                        <input type="email" name="emailField" style="color:white;border-color:white;"class="form-control" id="email"  ng-model="user.email" required md-no-asterisk/>                 
+                        <input type="email" name="emailField" style="color:white;border-color:white;"class="form-control" id="email"  ng-model="user.email" required md-no-asterisk availability-validator = "/api/users"/>                 
                         <div ng-messages="signupForm.emailField.$error">
                             <div ng-message="required">Please enter a value for this field.</div>
                             <div ng-message="email">This field must be a valid email address.</div>
