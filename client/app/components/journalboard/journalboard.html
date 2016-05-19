@@ -7,8 +7,29 @@
     </div>
     <md-divider style="margin-bottom:20px;"></md-divider>
     <div>   
-        <div class='md-padding' layout="row" layout-wrap ng-if= "currMonthEntries.length > 0">
-                <md-card class="md-body-1" style="width: 285px;" ng-repeat="entry in currMonthEntries" layout="column">
+        <div class='md-padding' layout="row" layout-wrap >
+                <md-card class="md-body-1" style="width: 285px;" ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" layout="column">
+                
+                    <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
+                        <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{currDate.getDate()}}</span></md-card-avatar>
+                        <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
+                            <span class="md-headline" style="text-align:right;margin-right:5px;" flex>{{daysOfWeek[currDate.getDay()]}}</span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    
+                    <md-card-content style="padding:0;"flex>
+                        <md-content style="height:220px;">
+                        <md-list layout="column" style="font-size:14px;"flex>      
+                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start">
+                                <a ng-href="/#/entryone"><span flex="90">Add today's entry here</span></a>
+                            </md-list-item>
+                        </md-list>
+                        </md-content>
+                        
+                    </md-card-content>
+                </md-card>
+            
+                <md-card class="md-body-1" style="width: 285px;" ng-if= "currMonthEntries.length > 0" ng-repeat="entry in currMonthEntries" layout="column">
                 
                     <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
                         <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{entry.entryTime.getDate()}}</span></md-card-avatar>
@@ -20,7 +41,6 @@
                     <md-card-content style="padding:0;"flex>
                         <md-content style="height:220px;">
                         <md-list layout="column" style="font-size:14px;"flex>
-                            
                             <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start" ng-if="entry.entryThought1">
                                 <img ng-src="/assets/img/1.svg" style="margin-right:5px;" flex="10">
                                 <span flex="90">{{entry.entryThought1}}</span>

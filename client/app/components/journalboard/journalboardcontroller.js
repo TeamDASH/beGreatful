@@ -25,29 +25,29 @@ cardController.controller('CardCtrl', function($mdMedia, $scope, Entry, $locatio
   
   $scope.currMonthEntries = [];
   
-  $scope.userEntries = Entry.get(function(data) {
+  $scope.latestEntry;
+  
+  $scope.userEntries = Entry.get(function(data) { 
     console.log(data);
-    console.log(data.entries.length);
     
-    var allEntries = data.entries;
-    
-    for (var i = 0; i < allEntries.length; i++) {
-      var sqlDate = allEntries[i].entryTime;
-      console.log(sqlDate);
+    if (data.entries) {
+      var allEntries = data.entries;
       
-      var d = new Date(sqlDate);
-      
-      console.log(d);
-      
-      allEntries[i].entryTime = d;
-      
-      console.log(allEntries[i].entryTime);
+      $scope.latestEntry = allEntries[0];
+        
+      for (var i = 0; i < allEntries.length; i++) {
+        var sqlDate = allEntries[i].entryTime;
+        
+        var d = new Date(sqlDate);
+        
+        allEntries[i].entryTime = d;       
 
-      if (d.getMonth() === $scope.currDate.getMonth() && d.getFullYear() === $scope.currDate.getFullYear()) {
-        console.log('pushing to currMonthEntries');
-        $scope.currMonthEntries.push(allEntries[i]);
+        if (d.getMonth() === $scope.currDate.getMonth() && d.getFullYear() === $scope.currDate.getFullYear()) {
+          $scope.currMonthEntries.push(allEntries[i]);
+        }
       }
     }
+    
   });
   
   
