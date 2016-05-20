@@ -1,6 +1,6 @@
 'use strict';
 
-var beGreatfulApp = angular.module('beGreatfulApp', ['ngMaterial', 'ngMessages', 'loginController', 'accountController', 'journalController', 'journalBoardController', 'navController', 'ui.router', 'userService', 'entryService', 'availabilityValidator']);
+var beGreatfulApp = angular.module('beGreatfulApp', ['ngMaterial', 'ngMessages', 'ngAnimate','loginController', 'accountController', 'journalController', 'journalBoardController', 'navController', 'ui.router', 'userService', 'entryService', 'availabilityValidator']);
 
 beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
     
