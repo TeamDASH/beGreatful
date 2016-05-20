@@ -10,11 +10,12 @@
         <img src="/assets/img/cloud.svg" alt="face" style="width:30px;height:30px;margin-right:5px;margin-bottom:15px;">
         <span style="height:30px;" layout="column" layout-align="center center">More Thoughts</span>
     </div>
-    
-    <md-input-container style="margin-left:30px;"layout-fill>
-            <label>More thoughts?</label>
-            <textarea ng-model="entry.moreThoughts"></textarea>
-    </md-input-container>
+    <div layout="row" flex>
+        <md-input-container style="margin-left:30px;" flex>
+                <label>More thoughts?</label>
+                <textarea ng-model="entry.moreThoughts"></textarea>
+        </md-input-container>
+    </div>
     <div layout="row" layout-align="center" style="margin:10px;">
       <md-button style="background-color:teal;" class="md-raised md-primary" ui-sref="journal.check">NEXT</md-button>
     </div>
