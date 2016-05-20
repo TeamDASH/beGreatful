@@ -5,7 +5,9 @@
       <div id="navLogo" layout="row" layout-align="center">
         <span>be<span style="color:#17A697">Great</span>ful<md-icon md-svg-src="/assets/img/begreatful_logo.svg"></md-icon></span>
       </div>
-      
+      <div ng-messages="formLogin.$error" style="color:#EB7260" role="alert">
+            <div ng-message="specificError">{{serverMessage}}</div>
+      </div>  
       <md-input-container>
         <label for="email" class="sr-only" style="color:white;">Email address</label>
         <input type="email" id="email" name="emailField" class="form-control" style="color:white;border-color:white;" ng-model="user.email" required md-no-asterisk>
