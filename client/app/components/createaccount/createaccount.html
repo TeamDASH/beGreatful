@@ -2,9 +2,30 @@
     <div style="background-color:#354458;color:teal;min-height:100%;padding:5px;" flex-gt-sm="40" flex-offset-gt-sm="30">
         <form role="form" name="signupForm" layout-fill>
             <div id="navLogo" layout="row" layout-align="center">
-                <span>be<span style="color:#17A697">Great</span>ful<md-icon md-svg-src="/assets/img/begreatful_logo.svg"></md-icon></span>
+                <span>be<span style="color:#17A697">Great</span>ful<md-icon style="vertical-align: 1%" md-svg-src="/assets/img/begreatful_logo_blue.svg"></md-icon></span>
             </div>
+                
                 <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <label for="firstName" style="color:white;">First name</label>                      
+                        <input type="text" style="color:white;border-color:white;" class="form-control" name="firstNameField" id="firstName" ng-model="user.firstName" required md-no-asterisk/> 
+                        <div ng-messages="signupForm.firstNameField.$error" role="alert">
+                            <div ng-message="required">Please enter a value for this field.</div>
+                        </div>                    
+                    </md-input-container>
+                </div>
+                
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <label for="lastName" style="color:white;">Last name</label>                  
+                        <input type="text" style="color:white;border-color:white;" class="form-control" name="lastNameField" id="lastName" ng-model="user.lastName" required md-no-asterisk/>
+                         <div ng-messages="signupForm.lastNameField.$error" role="alert">
+                            <div ng-message="required">Please enter a value for this field.</div>
+                        </div>  
+                    </md-input-container>
+                </div>
+                
+                 <div layout="row" layout-align="center">
                     <md-input-container flex>
                         <label for="email" style="color:white;">Email</label>                      
                         <input type="email" name="emailField" style="color:white;border-color:white;"class="form-control" id="email"  ng-model="user.email" ng-model-options="{ updateOn: 'mousedown blur' }" required md-no-asterisk availability-validator="/api/users"/>                 
@@ -16,26 +37,6 @@
                         </div>               
                     </md-input-container>
                     
-                </div>
-                
-                <div layout="row" layout-align="center">
-                    <md-input-container flex>
-                        <label for="firstName" style="color:white;">First Name</label>                      
-                        <input type="text" style="color:white;border-color:white;" class="form-control" name="firstNameField" id="firstName" ng-model="user.firstName" required md-no-asterisk/> 
-                        <div ng-messages="signupForm.firstNameField.$error" role="alert">
-                            <div ng-message="required">Please enter a value for this field.</div>
-                        </div>                    
-                    </md-input-container>
-                </div>
-                
-                <div layout="row" layout-align="center">
-                    <md-input-container flex>
-                        <label for="lastName" style="color:white;">Last Name</label>                  
-                        <input type="text" style="color:white;border-color:white;" class="form-control" name="lastNameField" id="lastName" ng-model="user.lastName" required md-no-asterisk/>
-                         <div ng-messages="signupForm.lastNameField.$error" role="alert">
-                            <div ng-message="required">Please enter a value for this field.</div>
-                        </div>  
-                    </md-input-container>
                 </div>
                 
                 <div layout="row" layout-align="center">
