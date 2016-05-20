@@ -8,13 +8,12 @@
     <!-- -->
     <div layout="row">
         <img ng-src="/assets/img/1.svg" style="margin-right:5px;width:20px;height:20px;" flex="5">
-        <div flex="95" layout='column' layout-fill>
+        <div flex="95" layout='column'>
             <span style="margin-bottom:15px;">Grateful Thought</span>
-            <md-input-container layout-fill>
+            <md-input-container>
                 <label>I am grateful for...</label>
                 <textarea ng-model="entry.entryThought1"></textarea> 
-            </md-input-container>
-            
+            </md-input-container>         
         </div>
        
     </div>
@@ -27,4 +26,5 @@
    <div layout="row" layout-align="center" style="margin:10px;">
       <md-button style="background-color:teal;" class="md-raised md-primary" ui-sref="journal.entrytwo">NEXT</md-button>
     </div>
+    
 </div>

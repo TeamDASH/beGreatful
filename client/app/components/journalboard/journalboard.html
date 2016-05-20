@@ -15,15 +15,12 @@
                             <span class="md-headline" style="text-align:right;margin-right:5px;" flex>{{daysOfWeek[currDate.getDay()]}}</span>
                         </md-card-header-text>
                     </md-card-header>
-                    
-                    <md-card-content style="padding:0;"flex>
-                        <md-content style="height:220px;">
-                        <md-list layout="column" style="font-size:14px;"flex>      
-                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start">
-                                <a ng-href="/#/entryone"><span flex="90">Add today's entry here</span></a>
-                            </md-list-item>
-                        </md-list>
-                        </md-content>
+                    <md-divider style="color:white"></md-divider>
+                    <md-card-content style="padding:5px;background-color:#17A697;" layout="column" flex>
+                                 
+                                 <div id="journalPrompt"style="font-size:32px;text-align:center;">          
+                                    <a ng-href="/#/entryone"><span class="md-display-1">CREATE TODAY'S ENTRY</span></a>
+                                </div>
                     </md-card-content>
                 </md-card>
             

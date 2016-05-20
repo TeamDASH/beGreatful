@@ -1,10 +1,10 @@
 
 <div style="margin-left:10px;margin-right:10px;margin-top:10px;" layout="column" ng-controller="JournalCtrl as ctrl">
         
-    <div ng-cloak ui-view></div>
+    <div id="entry-views" ui-view></div>
     
-     <div id="status-buttons" class="text-center" layout="row" layout-align="center">
-        <div >
+     <div id="status-buttons" class="text-center" layout="row" layout-align="center" >
+        <div>
           <a ui-sref-active="active" ui-sref=".entryone"><span></span> Thought 1</a>
           <a ui-sref-active="active" ui-sref=".entrytwo"><span></span> Thought 2</a>
           <a ui-sref-active="active" ui-sref=".entrythree"><span></span> Thought 3</a>
