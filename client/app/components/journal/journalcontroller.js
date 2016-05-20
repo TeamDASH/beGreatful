@@ -5,10 +5,14 @@ var journalController = angular.module('journalController', []);
 journalController.controller('JournalCtrl', function ($scope, Entry, $location) {
     $scope.entry = new Entry();
     
-    $scope.entry.entryMood = '';
+    $scope.entryReminder = "Please fill out at least one thought!";
     
-    $scope.entry.moreThoughts = "no more thoughts";
-    $scope.tags=['Family', 'Nature', 'Friends'];
+    $scope.moodReminder = "Please select a mood!";
+    
+    $scope.entryReminderDisplay = false;
+    $scope.moodReminderDisplay = false;
+    
+    $scope.tags = ['Family', 'Nature', 'Friends'];
     $scope.menuItems = ['great','good','okay','poor','awful'];
     $scope.emotion = '';
     
@@ -17,13 +21,26 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     }
     
     $scope.createEntry = function(entry) {
-        console.log(entry);
-        Entry.save(entry, function(response) {
-            console.log(response);
-            if (response.entry) {
-                $location.path('/board')
+        $scope.entryReminderDisplay = false;
+        $scope.moodReminderDisplay = false;
+        console.log(checkValidity());
+        if (checkValidity()) {
+            Entry.save(entry, function(response) {
+                console.log(response);
+                if (response.entry) {
+                    $location.path('/board');
+                }
+            });
+        } else {
+            if (!$scope.entry.entryThought1) {
+                $location.path('/entryone');
+                $scope.entryReminderDisplay = true;
             }
-        });
+        }
+    }
+    
+    function checkValidity() {
+        return ($scope.entry.entryThought1 && $scope.entry.entryMood);
     }
 });
 

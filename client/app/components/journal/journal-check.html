@@ -5,7 +5,7 @@
         <span flex></span>
         <span layout-gt-xs="column" layout-align="end center">Monday, February 27</span>
     </div>
-  
+  <div ng-if="moodReminderDisplay == true" style="color:#EB7260">{{moodReminder}}</div>
    <div layout="row">
         <img src="assets/img/face.svg" alt="face" style="width:30px;height:30px;margin-right:5px;">
         <span style="height:30px;" layout="column" layout-align="center center">Emotional Check-in</span>

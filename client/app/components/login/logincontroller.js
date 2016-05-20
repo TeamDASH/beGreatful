@@ -2,7 +2,7 @@
 
 var loginController = angular.module('loginController', []);
 
-loginController.controller('LoginCtrl', function ($scope, Login, $location) {
+loginController.controller('LoginCtrl', function ($scope, Login, Entry, $location) {
   $scope.user = new Login();
   
   $scope.serverMessage = 'HELLO';
@@ -12,8 +12,22 @@ loginController.controller('LoginCtrl', function ($scope, Login, $location) {
       console.log(response);
       if (response.success) {
         $scope.serverMessage = "";
-        $scope.formLogin.$setValidity('specificError', true);
-        $location.path('/journal')
+        Entry.get(function(data) { 
+            console.log(data);
+            if (data.entries) {
+               var latestEntry = data.entries[0];
+               console.log(latestEntry);
+               console.log(new Date(latestEntry.entryTime).getDate());
+               console.log(new Date(latestEntry.entryTime).getDate() == new Date().getDate());
+               if (new Date(latestEntry.entryTime).getDate() == new Date().getDate()) {
+                  console.log('going to board');
+                  $location.path('/board');
+               } else {
+                 console.log('going to journal');
+                  $location.path('/journal');
+               }
+             }
+         });  
       } else {
         $scope.serverMessage = response.error;
         $scope.formLogin.$setValidity('specificError', false);
