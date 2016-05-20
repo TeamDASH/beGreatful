@@ -2,64 +2,189 @@
     <div style="background-color:white;height:50px;padding:0;" layout="row" layout-align="end">
         <h2>{{currMonth}} {{currDate.getFullYear()}}</h2>
         <span flex></span>
-        <md-button style="padding:0px;margin:0px;"><md-icon md-svg-src="/assets/img/calendar.svg" aria-label="calendar"></md-icon></md-button>
-    
+        <md-button style="padding:0px;margin:0px;">
+            <md-icon md-svg-src="/assets/img/calendar.svg" aria-label="calendar"></md-icon>
+        </md-button>
+
     </div>
     <md-divider style="margin-bottom:20px;"></md-divider>
-    <div>   
-        <div class='md-padding' layout="row" layout-wrap >
-                <md-card class="md-body-1" style="width: 285px;" ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" layout="column">          
-                    <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
-                        <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{currDate.getDate()}}</span></md-card-avatar>
-                        <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
-                            <span class="md-headline" style="text-align:right;margin-right:5px;" flex>{{daysOfWeek[currDate.getDay()]}}</span>
-                        </md-card-header-text>
-                    </md-card-header>
-                    <md-divider style="color:white"></md-divider>
-                    <md-card-content style="padding:5px;background-color:#17A697;" layout="column" flex>
-                                 
-                                 <div id="journalPrompt"style="font-size:32px;text-align:center;">          
-                                    <a ng-href="/#/entryone"><span class="md-display-1">CREATE TODAY'S ENTRY</span></a>
-                                </div>
-                    </md-card-content>
-                </md-card>
-            
-                <md-card class="md-body-1" style="width: 285px;" ng-if= "currMonthEntries.length > 0" ng-repeat="entry in currMonthEntries" layout="column">
-                
-                    <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
-                        <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{entry.entryTime.getDate()}}</span></md-card-avatar>
-                        <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
-                            <span class="md-headline" style="text-align:right;margin-right:5px;" flex>{{daysOfWeek[entry.entryTime.getDay()]}}</span>
-                        </md-card-header-text>
-                    </md-card-header>
-                    
-                    <md-card-content style="padding:0;"flex>
-                        <md-content style="height:220px;">
-                        <md-list layout="column" style="font-size:14px;"flex>
-                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start" ng-if="entry.entryThought1">
+    <div>
+        <div class='md-padding' layout="row" layout-wrap>
+            <md-card class="md-body-1" style="width: 285px;" layout="column">
+                <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
+                    <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{currDate.getDate()}}</span></md-card-avatar>
+                    <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
+                        <span class="md-headline" style="text-align:right;margin-right:5px;" flex>{{daysOfWeek[currDate.getDay()]}}</span>
+                    </md-card-header-text>
+                </md-card-header>
+                <md-divider style="color:white"></md-divider>
+                <md-card-content style="padding:5px;background-color:#17A697;" layout="column" flex>
+
+                    <div id="journalPrompt" style="font-size:32px;text-align:center;">
+                        <a ng-href="/#/entryone"><span class="md-display-1">CREATE TODAY'S ENTRY</span></a>
+                    </div>
+                </md-card-content>
+            </md-card>
+
+            <md-card class="md-body-1" style="width: 285px;" layout="column" ng-hide="hideLatest == true">
+
+                <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
+                    <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{latestEntry.entryTime.getDate()}}</span></md-card-avatar>
+                    <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
+                        <span class="md-headline" style="text-align:right;margin-right:5px;" flex ng-click="hideEntry()">{{daysOfWeek[latestEntry.entryTime.getDay()]}}</span>
+                    </md-card-header-text>
+                </md-card-header>
+
+                <md-card-content style="padding:0;" flex>
+                    <md-content style="height:220px;">
+                        <md-list layout="column" style="font-size:14px;" flex>
+                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start">
                                 <img ng-src="/assets/img/1.svg" style="margin-right:5px;" flex="10">
-                                <span flex="90">{{entry.entryThought1}}</span>
+                                <span flex="90">{{latestEntry.entryThought1}}</span>
                             </md-list-item>
-                            
-                            <md-list-item style="margin-bottom:5px;" layout="row" layout-align="none start" ng-if="entry.entryThought2">
-                                <img ng-src="/assets/img/2.svg"style="margin-right:5px;" flex="10" >
-                                <span flex="90">{{entry.entryThought2}}</span>
+
+                            <md-list-item style="margin-bottom:5px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/2.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">{{latestEntry.entryThought2}}</span>
                             </md-list-item>
-                            
-                            <md-list-item layout="row" layout-align="none start" ng-if="entry.entryThought3">
+
+                            <md-list-item layout="row" layout-align="none start">
                                 <img ng-src="/assets/img/3.svg" style="margin-right:5px;" flex="10">
-                                <span flex="90">{{entry.entryThought3}}</span>
+                                <span flex="90">{{latestEntry.entryThought3}}</span>
                             </md-list-item>
                         </md-list>
-                        </md-content>
-                        
-                    </md-card-content>
-                    
-                    <div class="md-actions" layout="row" style="height:20px;">
-                        <span flex></span>
-                        <md-icon md-svg-src={{getEmoticonPath(entry.entryMood)}} aria-label="emoticon"></md-icon>
-                    </div>
-                </md-card>
-            </div>
+                    </md-content>
+
+                </md-card-content>
+
+                <div class="md-actions" layout="row" style="height:20px;">
+                    <span flex></span>
+                    <md-icon md-svg-src={{getEmoticonPath(entry.entryMood)}} aria-label="emoticon"></md-icon>
+                </div>
+            </md-card>
+                <!--Demo card 3-->
+            <md-card class="md-body-1" style="width: 285px;" layout="column">
+
+                <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
+                    <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>19</span></md-card-avatar>
+                    <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
+                        <span class="md-headline" style="text-align:right;margin-right:5px;" flex ng-click="hideEntry()">Thursday</span>
+                    </md-card-header-text>
+                </md-card-header>
+
+                <md-card-content style="padding:0;" flex>
+                    <md-content style="height:220px;">
+                        <md-list layout="column" style="font-size:14px;" flex>
+                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/1.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that Nam-ho and Juan-Carlos are such helpful Capstone mentors! They have really helped us develop our idea... without them we might still be deciding what to work on!</span>
+                            </md-list-item>
+
+                            <md-list-item style="margin-bottom:5px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/2.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that I was able to take piano lessons as a kid even though I hated it then... I can still play now.</span>
+                            </md-list-item>
+
+                            <md-list-item layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/3.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that my brother is getting to go to college too and that he's so excited about it.</span>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+
+                </md-card-content>
+
+                <div class="md-actions" layout="row" style="height:20px;">
+                    <span flex></span>
+                    <md-icon md-svg-src={{getEmoticonPath(entry.entryMood)}} aria-label="emoticon"></md-icon>
+                </div>
+            </md-card>
+             <!--Demo card 2-->
+            <md-card class="md-body-1" style="width: 285px;" layout="column">
+
+                <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
+                    <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>17</span></md-card-avatar>
+                    <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
+                        <span class="md-headline" style="text-align:right;margin-right:5px;" flex ng-click="hideEntry()">Tuesday</span>
+                    </md-card-header-text>
+                </md-card-header>
+
+                <md-card-content style="padding:0;" flex>
+                    <md-content style="height:220px;">
+                        <md-list layout="column" style="font-size:14px;" flex>
+                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="center center" flex>
+                                <span flex></span><img src="/assets/img/cat.jpg" alt="" style="max-width:100%;height:200px;">
+                                <span flex></span>
+                            </md-list-item>
+                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/1.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that Raya was cuddly today! I love it when she comes and next to me on the couch when I'm doing homework.</span>
+                            </md-list-item>
+
+                            <md-list-item style="margin-bottom:5px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/2.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that I got all my homework done so that I could go see Dominic's play.</span>
+                            </md-list-item>
+
+                            <md-list-item layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/3.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that I get to go to the UW!</span>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+
+                </md-card-content>
+
+                <div class="md-actions" layout="row" style="height:20px;">
+                    <span flex></span>
+                    <md-icon md-svg-src={{getEmoticonPath(entry.entryMood)}} aria-label="emoticon"></md-icon>
+                </div>
+            </md-card>
+            <!--Demo card 1-->
+
+            <md-card class="md-body-1" style="width: 285px;border-radius: 3px 3px 3px 3px;" layout="column">
+
+                <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
+                    <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>16</span></md-card-avatar>
+                    <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
+                        <span class="md-headline" style="text-align:right;margin-right:5px;" flex ng-click="hideEntry()">Monday</span>
+                    </md-card-header-text>
+                </md-card-header>
+
+                <md-card-content style="padding:0;" flex>
+                    <md-content style="height:220px;">
+                        <md-list layout="column" style="font-size:14px;" flex>
+                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start">
+                                <img src="/assets/img/mt-rainier-natl-park.jpg" alt="" style="max-width:100%;max-height:100%;">
+                            </md-list-item>
+                            <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/1.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that I got to see my family to celebrate Tom's birthday! I can't believe my little brother is turning 17.</span>
+                            </md-list-item>
+
+                            <md-list-item style="margin-bottom:5px;" layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/2.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that I got to go on a hike in Mt Rainier National Park... it was a busy day, but I'm really happy that my family likes nature as much as I do.</span>
+                            </md-list-item>
+
+                            <md-list-item layout="row" layout-align="none start">
+                                <img ng-src="/assets/img/3.svg" style="margin-right:5px;" flex="10">
+                                <span flex="90">I'm grateful that I have such a comfortable bed!</span>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+
+                </md-card-content>
+
+                <div class="md-actions" layout="row" style="height:20px;">
+                    <span flex></span>
+                    <md-icon md-svg-src={{getEmoticonPath(entry.entryMood)}} aria-label="emoticon"></md-icon>
+                </div>
+            </md-card>
+
+           
+            
+              
         </div>
+    </div>
 </div>

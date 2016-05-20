@@ -27,6 +27,12 @@ cardController.controller('CardCtrl', function($mdMedia, $scope, Entry, $locatio
   
   $scope.latestEntry;
   
+  $scope.hideLatest = false;
+  
+  $scope.hideEntry = function() {
+    $scope.hideLatest = !$scope.hideLatest;
+  }
+  
   $scope.userEntries = Entry.get(function(data) { 
     console.log(data);
     
