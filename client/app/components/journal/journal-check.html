@@ -16,7 +16,7 @@
       <md-list ng-repeat="item in menuItems" style="padding:0;">
         <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive(item); entry.entryMood = item" ng-class="{activeOption: emotion === item}">
           <span flex></span>
-          <md-icon md-svg-src="/assets/img/{{item}}.svg" style="width:50px;height:50px;margin-right:10px;" alt="{{item}}"></md-icon>
+          <img ng-src="/assets/img/{{item}}.png" style="width:50px;height:50px;margin-right:10px;" alt="{{item}}"></img>
           <span>{{item}}</span>
           <span flex></span>
         </md-list-item>
