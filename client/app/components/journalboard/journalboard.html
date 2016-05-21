@@ -1,13 +1,15 @@
-<div style="margin:10px;" layout="column" ng-controller="CardCtrl as cardCtrl">
+
+<div style="margin:10px;overflow-y: scroll" layout="column" ng-controller="CardCtrl as cardCtrl">
    
-    <div style="background-color:white;height:50px;padding:0;" layout="row" layout-align="end">
+    <div style="background-color:white;height:50px;margin:5px;" layout="row">
         <h2>{{currMonth}} {{currDate.getFullYear()}}</h2>
         <span flex></span>
-        <md-button style="padding:0px;margin:0px;"><md-icon md-svg-src="/assets/img/calendar_1.svg" aria-label="calendar"></md-icon></md-button>
-    
+        <div layout="column" layout-align="end end">
+            <md-icon style="margin:5px;"md-svg-src="/assets/img/calendar_1.svg" aria-label="calendar" ng-click="#"></md-icon>
+        </div>
     </div>
     <md-divider style="margin-bottom:20px;"></md-divider>
-    <div>   
+        
         <div class='md-padding' layout="row" layout-wrap >
                 <!--Create today's entry card template-->
                 <md-card class="md-body-1" style="width: 285px;" ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" layout="column">          
@@ -62,7 +64,6 @@
                         <md-icon md-svg-src={{getEmoticonPath(entry.entryMood)}} aria-label="emoticon"></md-icon>
                     </div>
                 </md-card>
-            </div>
-        </div>
+            </div>    
        
 </div>
