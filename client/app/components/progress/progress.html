@@ -1,1 +1,61 @@
-<h1>Coming soon!</h1>
+<div ng-cloak>
+    <md-tabs md-stretch-tabs="always" md-dynamic-height md-border-bottom>
+      <md-tab label="Gratitude Map">
+        <md-content class="md-padding">
+         <div layout="column">
+              <div style="background-color:white;height:40px;margin:5px;" layout="row">                  
+                    <span flex></span>
+                    <div layout="column" layout-align="end center"><span style="font-size:26px;">April</span></div>
+                    <div layout="column" layout-align="end end">
+                        <md-icon style="margin:5px;"md-svg-src="/assets/img/calendar_1.svg" aria-label="calendar" ng-click="#"></md-icon>
+                    </div>
+              </div>
+             <div layout="row" style="padding-bottom:15px;" layout-align-gt-sm="center">
+                 <img ng-src="/assets/img/donut_chart.svg" alt="">
+             </div>
+             <md-divider></md-divider>
+             <div layout="row" style="padding-top:15px;"layout-align-gt-sm="center">
+                 <img ng-src="/assets/img/bar_chart.svg" alt="">
+             </div>
+         </div> 
+        </md-content>
+      </md-tab>
+      <md-tab label="Journal Metrics">
+        <md-content class="md-padding">
+            <div layout="column">
+                <div layout="row" style="padding-bottom:15px;" layout-align-gt-sm="center">
+                    <img ng-src="/assets/img/current_streak.svg" alt="">
+                </div>
+                <div layout="row" style="padding-bottom:15px;" layout-align-gt-sm="center">
+                    <img ng-src="/assets/img/longest_streak.svg" alt="">
+                </div>
+                <div layout="row" style="padding-bottom:15px;" flex>
+                    <md-content>
+                        <img ng-src="/assets/img/journal_usage.png" alt="">
+                    </md-content>                    
+                </div>
+            </div>  
+        </md-content>
+      </md-tab>
+      <md-tab label="Mood">
+        <md-content class="md-padding">
+          <div layout="column">
+            <div style="background-color:white;height:40px;margin:5px;" layout="row">                  
+                    <span flex></span>
+                    <div layout="column" layout-align="end center"><span style="font-size:26px;">April</span></div>
+                    <div layout="column" layout-align="end end">
+                        <md-icon style="margin:5px;"md-svg-src="/assets/img/calendar_1.svg" aria-label="calendar" ng-click="#"></md-icon>
+                    </div>
+              </div> 
+              <div layout="row" style="padding-bottom:15px;" layout-align-gt-sm="center">
+                    <img ng-src="/assets/img/weekly_mood_full.svg" alt="">
+                </div> 
+                <md-divider></md-divider>
+                <div layout="row" style="padding-top:15px;" layout-align-gt-sm="center">
+                    <img ng-src="/assets/img/overall_mood_graph.svg" alt="">
+                </div>  
+          </div>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+</div>

@@ -31,6 +31,21 @@ h4 {
     color:#3E5060;
 }
 
+.md-tab {
+    color: teal !important;
+    font-size:16px;
+}
+.md-tab:select {
+    background: teal !important;
+    font-size:16px;
+}
+
+
+md-tabs md-ink-bar {
+    color: teal;
+    background-color: teal;
+}
+
 #navLogo{
     font-size: 36px;
     background-color:#354458;
@@ -50,6 +65,9 @@ h4 {
 #footer {
    padding-left:10px;
     background-color:#354458;
+ }
+ md-tabs label {
+     color:teal;
  }
  md-list md-list-item button.md-button:not([disabled]):hover {
   background-color: none;
