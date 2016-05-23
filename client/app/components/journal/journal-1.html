@@ -1,15 +1,15 @@
 <div layout="column">
-    <div style="margin-bottom:30px;" layout-gt-xs="row" layout-xs="column">
-        <div class="md-display-1">What are you grateful for today?</div>
-        <span flex></span>
-        <span layout-gt-xs="column" layout-align="end center">Monday, February 27</span>
+    <div style="margin-bottom:30px;" layout="column" flex>
+        <span style="color: #354458;">Monday, February 27</span>
+        <md-divider flex></md-divider>
+        <div class="md-display-1">What are you grateful for today?</div>        
     </div>
     <div ng-if="entryReminderDisplay == true" style="color:#EB7260">{{entryReminder}}</div>
-    <!-- -->
+ 
     <div layout="row">
         <img ng-src="/assets/img/1.svg" style="margin-right:5px;width:20px;height:20px;" flex="5">
         <div flex="95" layout='column'>
-            <span style="margin-bottom:15px;">Grateful Thought</span>
+            <span style="margin-bottom:15px;color: #354458;">Grateful Thought</span>
             <md-input-container>
                 <label>I am grateful for...</label>
                 <textarea ng-model="entry.entryThought1"></textarea> 

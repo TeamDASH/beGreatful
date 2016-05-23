@@ -1,18 +1,23 @@
 @font-face {
     font-family: myFont;
     src: url("../fonts/MissionGothicLight.otf");
+    
 }
 body {
   font-family: myFont;
   overflow: hidden; 
   max-width: 100%; 
   max-height: 100%;
+  
 }
 
 .activeOption {
     background:teal;
 }
 
+.md-display-1 {
+    color: #354458;
+}
 input,
 button,
 select,
@@ -59,11 +64,14 @@ md-tabs md-ink-bar {
     background-color: #3E5060;
 }
 
+#navButton {
+    font-size: 24px !important; 
+}
 #navButton:hover {
     background-color:#EB7260;    
 }
 #footer {
-   padding-left:10px;
+   padding:10px;
     background-color:#354458;
  }
  md-tabs label {

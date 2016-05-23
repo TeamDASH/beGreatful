@@ -1,14 +1,16 @@
 <div layout="column" >
   
-  <div style="margin-bottom:30px;" layout-gt-xs="row" layout-xs="column">
-        <div class="md-display-1">What are you grateful for today?</div>
-        <span flex></span>
-        <span layout-gt-xs="column" layout-align="end center">Monday, February 27</span>
+  <div style="margin-bottom:30px;" layout="column">
+        <span style="color: #354458;">Monday, February 27</span>
+        <md-divider></md-divider>
+        <div class="md-display-1">How are you feeling today?</div>
+        
+        
     </div>
   <div ng-if="moodReminderDisplay == true" style="color:#EB7260">{{moodReminder}}</div>
    <div layout="row">
         <img src="assets/img/face.svg" alt="face" style="width:30px;height:30px;margin-right:5px;">
-        <span style="height:30px;" layout="column" layout-align="center center">Emotional Check-in</span>
+        <span style="color: #354458;height:30px;" layout="column" layout-align="center center">Emotional Check-in</span>
     </div>
   
   <div layout="row">  

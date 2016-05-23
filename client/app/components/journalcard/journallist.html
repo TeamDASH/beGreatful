@@ -1,10 +1,13 @@
 <div ng-controller="CardCtrl as cardCtrl" ng-cloak>
     <md-content>
         <md-list>
-            <md-toolbar style="background-color:white;" layout="row" flex>
-                <h4 flex-offset="5">{{currMonth}}</h4>
-                <md-button flex-offset="65"><md-icon md-svg-src="/assets/img/calendar.svg" aria-label="calendar"></md-icon></md-button>
-            </md-toolbar>
+            <div style="background-color:white;height:50px;margin:5px;" layout="row">
+        <h2 style="color: #354458;">{{currMonth}} {{currDate.getFullYear()}}</h2>
+        <span flex></span>
+        <div layout="column" layout-align="end end">
+            <md-icon style="margin:5px;"md-svg-src="/assets/img/calendar_1.svg" aria-label="calendar" ng-click="#"></md-icon>
+        </div>
+            </div>
             <md-divider></md-divider>
             <md-list-item  ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" style="background-color:teal;">
                 <md-content layout="row" style="background-color:teal;" layout-fill >
