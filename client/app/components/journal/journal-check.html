@@ -17,10 +17,13 @@
    <md-card flex-offset-gt-sm="35" flex-gt-sm="30" flex-sm="100" flex-xs="100" ng-cloak>
       <md-list ng-repeat="item in menuItems" style="padding:0;">
         <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive(item); entry.entryMood = item" ng-class="{activeOption: emotion === item}">
-          <span flex></span>
-          <img src="/assets/img/{{item}}.png" style="width:50px;height:50px;margin-right:10px;" alt="{{item}}"></img>
+         
+          <div flex="60" flex-offset="30" layout="row">
+          <img ng-src="/assets/img/{{item}}.png" style="width:50px;height:50px;margin-right:10px;" alt="{{item}}"></img>
           <span>{{item}}</span>
-          <span flex></span>
+          </div>
+          
+          
         </md-list-item>
         <md-divider></md-divider>
      </md-list>      

@@ -12,7 +12,7 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     $scope.entryReminderDisplay = false;
     $scope.moodReminderDisplay = false;
     
-    $scope.tags = ['Family', 'Nature', 'Friends'];
+    $scope.tags = [];
     $scope.menuItems = ['great','good','okay','poor','awful'];
     $scope.emotion = '';
     

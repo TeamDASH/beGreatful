@@ -1,9 +1,10 @@
 
-<div style="margin-left:20px;margin-right:20px;margin-top:20px;" layout="column" ng-controller="JournalCtrl as ctrl">
+<div flex layout="column" ng-controller="JournalCtrl as ctrl">
         
-    <div id="entry-views" ui-view></div>
+    <div style="margin-left:20px;margin-right:20px;margin-top:20px;height:100%;"id="entry-views" ui-view flex="90"></div>
     
-     <div id="status-buttons" class="text-center" layout="row" layout-align="center" >
+   
+     <div id="status-buttons" class="text-center" layout="row" layout-align="center" flex="10">
         <div>
           <a ui-sref-active="active" ui-sref=".entryone"><span></span> Thought 1</a>
           <a ui-sref-active="active" ui-sref=".entrytwo"><span></span> Thought 2</a>
@@ -12,6 +13,7 @@
           <a ui-sref-active="active" ui-sref=".check"><span></span> Check</a>
           </div>
      </div>
+     
   
 </div>
 

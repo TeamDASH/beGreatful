@@ -84,8 +84,8 @@ md-tabs md-ink-bar {
 #footer {
    padding-left:35px;
    padding-right:35px;
-   padding-top:5px;
-   padding-bottom:5px;
+   padding-top:15px;
+   padding-bottom:15px;
     background-color:#354458;
     font-style:italic;
     font-size: 20px;
@@ -119,7 +119,7 @@ md-tabs md-ink-bar {
 }
 
 /* numbered buttons */
-#status-buttons                 {  }
+#status-buttons                 {height:50px;  }
 #status-buttons a               { color:grey; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; text-decoration:none;}
 #status-buttons a:hover         { text-decoration:none; }
 #status-buttons span            { background:gray; display:block; height:10px; margin:0 12px 10px; padding-top:5px; width:15px;
