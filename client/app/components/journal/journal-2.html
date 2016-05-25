@@ -1,29 +1,32 @@
 <div layout="column">
    
-   <div style="margin-bottom:30px;" layout="column">
-        <span style="color: #354458;">Monday, February 27</span>
+   <div style="margin-bottom:15px;" layout="column" flex>
+        <div layout="row">
+            <div style="font-size:20px;color: #354458;margin-bottom:10px;">Monday, February 27</div>
+        </div>
         <md-divider flex></md-divider>
-        <div class="md-display-1">What are you grateful for today?</div>  
+        <div class="md-display-1" style="margin-top:10px;" show-gt-xs hide-xs>What are you grateful for today?</div> 
+        <div  style="margin-top:10px;font-size:26px;color: #354458;"hide-gt-xs>What are you grateful for today?</div>  
     </div>
    
   <div layout="row">
-        <img ng-src="/assets/img/2.svg" style="margin-right:5px;width:20px;height:20px;" flex="5">
+        <img ng-src="/assets/img/2.svg" style="margin-right:5px;width:35px;height:35px;" flex="5">
         <div flex="95" layout='column'>
-            <span style="margin-bottom:15px;color: #354458;">Grateful Thought</span>
+            <span style="margin-bottom:5px;color: #354458;font-size:24px;padding-top:5px;">Grateful Thought</span>
             <md-input-container>
                 <label>I am grateful for...</label>
-                <textarea ng-model="entry.entryThought2"></textarea>
+                <textarea style="border-color:#17A697;font-size:20px;" ng-model="entry.entryThought2"></textarea>
             </md-input-container>
             
         </div>
      </div>
      <div layout="row">
-        <md-button style="padding:0px;margin:0px;"><md-icon md-svg-src="/assets/img/picture.svg" style="padding:0px;margin:0px;" aria-label="picture"></md-icon></md-button>
-        <md-icon md-svg-src="/assets/img/tag.svg" style="" aria-label="tag"></md-icon>
+        <md-button style="padding:0px;margin:0px;"><md-icon md-svg-src="/assets/img/camera.svg" style="padding:0px;margin:0px;" aria-label="picture"></md-icon></md-button>
+        <md-icon md-svg-src="/assets/img/tag.svg" style="margin-right:15px;" aria-label="tag"></md-icon>
         <md-chips ng-model="tags" style="font-size:10px;" layout-fill></md-chips>
     </div>
-    <div layout="row" layout-align="center" style="margin:10px;">
-      <md-button style="background-color:teal;" class="md-raised md-primary" ui-sref="journal.entrythree">NEXT</md-button>
+    <div layout="row" layout-align="center" style="margin:30px;">
+      <md-button style="background-color:#17A697;font-size:24px;" class="md-raised md-primary" ui-sref="journal.entrythree">NEXT</md-button>
     </div>
     
   

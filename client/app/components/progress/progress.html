@@ -1,26 +1,36 @@
 <div ng-cloak>
     <md-tabs md-stretch-tabs="always" md-dynamic-height md-border-bottom>
+      
       <md-tab label="Gratitude Map">
         <md-content class="md-padding">
          <div layout="column">
-              <div style="background-color:white;height:40px;margin:5px;" layout="row">                  
+              <div style="background-color:white;height:30px;margin:5px;" layout="row" hide-sm hide-xs>                  
                     <span flex></span>
-                    <div layout="column" layout-align="end center"><span style="font-size:26px;">April</span></div>
+                    <div layout="column" layout-align="end center"><span style="font-size:26px;margin-right:10px;color:grey;">April</span></div>
                     <div layout="column" layout-align="end end">
                         <md-icon style="margin:5px;"md-svg-src="/assets/img/calendar_1.svg" aria-label="calendar" ng-click="#"></md-icon>
                     </div>
               </div>
               
-             <div layout="row" style="padding-bottom:15px;" flex-gt-sm="60">
+              <div style="background-color:white;height:40px;margin-top:10px;margin-bottom:20px;" layout="row" hide-gt-sm> 
+                  <span flex></span>                 
+                   <img ng-src="/assets/img/left_arrow.svg" alt="" >
+                    <div layout="column" layout-align="center center"><span style="font-size:26px;margin-left:60px;margin-right:60px;color:grey;">April</span></div>
+                    <img ng-src="/assets/img/right_arrow.svg" alt="" >
+                    <span flex></span>   
+              </div>
+              
+             <div layout="row" style="padding-bottom:25px;" flex-gt-sm="60">
                  <img ng-src="/assets/img/donut_chart.svg" alt="" style="width:100%;height:auto;">
              </div>
-             <md-divider></md-divider>
-             <div layout="row" style="padding-top:15px;" flex-gt-sm="60">
+             <md-divider style="background-color:#17A697;opacity:0.35;"></md-divider>
+             <div layout="row" style="padding-top:25px;" flex-gt-sm="60">
                  <img ng-src="/assets/img/bar_chart.svg" alt="" style="width:100%;height:auto;">
              </div>
          </div> 
         </md-content>
       </md-tab>
+      
       <md-tab label="Journal Metrics">
         <md-content class="md-padding">
             <div layout="column">
@@ -30,35 +40,61 @@
                 <div layout="row" style="padding-bottom:15px;">
                     <img ng-src="/assets/img/longest_streak.svg" alt="" style="width:100%;height:auto;">
                 </div>
-                <div layout="row" style="padding-bottom:15px;">
-                    <md-content>
-                        <img ng-src="/assets/img/journal_usage.png" alt="" style="width:100%;height:auto;">
-                    </md-content>                    
+                <md-divider style="background-color:#17A697;opacity:0.35;"></md-divider>
+                <div style="font-size:26px;padding-top:15px;color:grey;" layout="row" layout-align="center center">Journal Usage</div>
+                <div style="margin-bottom:15px;"layout="row">
+                    <img ng-src="/assets/img/left_arrow.svg" alt="" flex="5">
+                    <md-content layout="row" flex="90">
+                        <img ng-src="/assets/img/journal_usage.svg" style="margin-left:15px;margin-right:15px;"alt="">
+                    </md-content>
+                    <img ng-src="/assets/img/right_arrow.svg" style="margin-left:10px;"alt="" flex="5">                   
                 </div>
             </div>  
         </md-content>
       </md-tab>
+      
       <md-tab label="Mood">
         <md-content class="md-padding">
           <div layout="column">
-            <div style="background-color:white;height:40px;margin:5px;" layout="row">                  
+            <div style="background-color:white;height:40px;margin:5px;" layout="row" hide-sm hide-xs>                  
                     <span flex></span>
-                    <div layout="column" layout-align="end center"><span style="font-size:26px;">April</span></div>
+                    <div layout="column" layout-align="end center"><span style="font-size:26px;margin-right:10px;color:grey;">April</span></div>
                     <div layout="column" layout-align="end end">
                         <md-icon style="margin:5px;"md-svg-src="/assets/img/calendar_1.svg" aria-label="calendar" ng-click="#"></md-icon>
                     </div>
               </div>
               
-              <md-content>
-              <div layout="row" style="padding-bottom:15px;">
-                    <img ng-src="/assets/img/weekly_mood_full.svg" alt="" style="width:100%;height:auto;">
-                </div> 
-               </md-content>
+              <div style="background-color:white;height:40px;margin:5px;" layout="row" hide-gt-sm> 
+                  <span flex></span>                 
+                   <img ng-src="/assets/img/left_arrow.svg" alt="" >
+                    <div layout="column" layout-align="center center"><span style="font-size:26px;margin-left:60px;margin-right:60px;color:grey;">April</span></div>
+                    <img ng-src="/assets/img/right_arrow.svg" alt="" >
+                    <span flex></span>   
+              </div>
               
-                <md-divider></md-divider>
-                <div layout="row" style="padding-top:15px;">
+              <div style="font-size:26px;padding-bottom:15px;padding-top:15px;color:grey;" layout="row" layout-align="center center">Weekly Mood</div>
+              <div layout="row" style="padding-bottom:25px;">
+                    <img ng-src="/assets/img/left_arrow.svg" style="margin-left:15px;margin-right:15px;"alt="" flex="5">
+                    
+                    <div layout="row" flex="85">
+                        <img ng-src="/assets/img/weekly_mood_emoticons.svg" alt="">
+                    <md-content layout="row" flex>
+                        
+                    <img ng-src="/assets/img/weekly_mood_full.svg" alt="">
+                    </md-content>
+                    </div>
+                    <img ng-src="/assets/img/right_arrow.svg" alt="" flex="5">
+                </div> 
+               
+              
+                <md-divider style="background-color:#17A697;opacity:0.35;"></md-divider>
+                
+                <div style="font-size:26px;padding-bottom:15px;padding-top:15px;color:grey;" layout="row" layout-align="center center">Overall Mood March</div>
+                <div layout="row" >
+                    
                     <img ng-src="/assets/img/overall_mood_graph.svg" alt="" style="width:100%;height:auto;">
-                </div>  
+                </div>
+                <div style="font-size:26px;padding-top:15px;color:grey;" layout="row" layout-align="center center">2016</div>  
           </div>
         </md-content>
       </md-tab>

@@ -1,20 +1,23 @@
 
-<div flex layout="column" ng-controller="JournalCtrl as ctrl">
-        
-    <div style="margin-left:20px;margin-right:20px;margin-top:20px;height:100%;"id="entry-views" ui-view flex="90"></div>
-    
-   
-     <div id="status-buttons" class="text-center" layout="row" layout-align="center" flex="10">
-        <div>
+
+<md-content style="height:100%;" layout="column" ng-controller="JournalCtrl as ctrl">
+
+      <md-content flex>
+      <div style="margin-left:20px;margin-right:20px;margin-top:20px;"id="entry-views" ui-view flex></div>
+      </md-content>
+     <div layout="row" >
+        <span flex></span>
+        <div id="status-buttons">
           <a ui-sref-active="active" ui-sref=".entryone"><span></span> Thought 1</a>
           <a ui-sref-active="active" ui-sref=".entrytwo"><span></span> Thought 2</a>
           <a ui-sref-active="active" ui-sref=".entrythree"><span></span> Thought 3</a>
           <a ui-sref-active="active" ui-sref=".thoughts"><span></span> More</a>
           <a ui-sref-active="active" ui-sref=".check"><span></span> Check</a>
           </div>
+         <span flex></span>
      </div>
-     
-  
-</div>
+    
+</md-content>
+
 
 

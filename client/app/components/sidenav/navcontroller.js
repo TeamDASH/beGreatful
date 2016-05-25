@@ -3,7 +3,7 @@
 var navController = angular.module('navController', []);
 
 navController.controller('NavCtrl', function ($scope, $timeout, $mdSidenav, $log) {
-
+    
     $scope.toggleLeft = buildDelayedToggler('left');
     $scope.toggleRight = buildToggler('right');
     $scope.isOpenRight = function(){

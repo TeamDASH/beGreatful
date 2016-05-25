@@ -118,15 +118,24 @@ md-tabs md-ink-bar {
     transition: all 400ms ease-out 50ms;
 }
 
+.navTitle {
+    display:none;
+}
+
+.navTitleActive {
+    display: inline;
+}
+
+
 /* numbered buttons */
-#status-buttons                 {height:50px;  }
+#status-buttons                 {padding-bottom:70px;}
 #status-buttons a               { color:grey; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; text-decoration:none;}
 #status-buttons a:hover         { text-decoration:none; }
-#status-buttons span            { background:gray; display:block; height:10px; margin:0 12px 10px; padding-top:5px; width:15px;
+#status-buttons span            { background:#17A697; opacity: 0.35;display:block; height:10px; margin:0 12px 10px; padding-top:5px; width:15px;
     border-radius:50%; }
 
 /* active buttons */
-#status-buttons a.active span   { background:#00BC8C; }
+#status-buttons a.active span   { background:#17A697; opacity:1;}
 
 .chipsdemoBasicUsage .errors {
   font-size: 12px;

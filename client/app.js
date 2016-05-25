@@ -3,7 +3,7 @@
 var beGreatfulApp = angular.module('beGreatfulApp', ['ngMaterial', 'ngMessages', 'ngAnimate','loginController', 'accountController', 'journalController', 'journalBoardController', 'navController', 'ui.router', 'userService', 'entryService', 'availabilityValidator']);
 
 beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
-    
+ 
     $stateProvider
         .state('login', {
             url: '/login',
@@ -148,6 +148,7 @@ beGreatfulApp.config(function($stateProvider, $urlRouterProvider) {
             authenticate: true
         });
       $urlRouterProvider.otherwise('/entryone');
+   
 });
 
 beGreatfulApp.run(

@@ -1,36 +1,85 @@
 <div layout="column" >
   
-  <div style="margin-bottom:30px;" layout="column">
-        <span style="color: #354458;">Monday, February 27</span>
-        <md-divider></md-divider>
-        <div class="md-display-1">How are you feeling today?</div>
+  <div style="margin-bottom:15px;" layout="column" flex>
+        <div layout="row">
+            <div style="font-size:20px;color: #354458;margin-bottom:10px;">Monday, February 27</div>
+        </div>
+        <md-divider flex></md-divider>
+        <div class="md-display-1" style="margin-top:10px;" show-gt-xs hide-xs>How are you feeling today?</div> 
+        <div  style="margin-top:10px;font-size:26px;color: #354458;"hide-gt-xs>How are you feeling today?</div>    
+    </div>
         
         
     </div>
   <div ng-if="moodReminderDisplay == true" style="color:#EB7260">{{moodReminder}}</div>
    <div layout="row">
-        <img src="assets/img/face.svg" alt="face" style="width:30px;height:30px;margin-right:5px;">
-        <span style="color: #354458;height:30px;" layout="column" layout-align="center center">Emotional Check-in</span>
+        <img src="assets/img/face.svg" alt="face" style="width:30px;height:30px;margin-right:15px;">
+        <span style="color: #354458;height:30px;font-size:24px;" layout="column" layout-align="center center">Emotional Check-in</span>
     </div>
   
   <div layout="row">  
-   <md-card flex-offset-gt-sm="35" flex-gt-sm="30" flex-sm="100" flex-xs="100" ng-cloak>
-      <md-list ng-repeat="item in menuItems" style="padding:0;">
-        <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive(item); entry.entryMood = item" ng-class="{activeOption: emotion === item}">
+   <md-card flex-offset-gt-sm="35" flex-gt-sm="30" flex-sm="100" flex-xs="100" >
+      <md-list style="padding:0;" >
+        <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('great'); entry.entryMood = 'great'" ng-class="{activeOption: emotion === 'great'}">
+         
+          <div flex="60" flex-offset="30" layout="row">
+          <img src="/assets/img/great.png" style="width:50px;height:50px;margin-right:10px;" alt="great"></img>
+          <span>great</span>
+          </div>
+          </md-list-item>
+          <md-divider></md-divider>
+          <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('good'); entry.entryMood = 'good'" ng-class="{activeOption: emotion === 'good'}">
+         
+              <div flex="60" flex-offset="30" layout="row">
+              <img src="/assets/img/good.png" style="width:50px;height:50px;margin-right:10px;" alt="good"></img>
+              <span>good</span>
+              </div>
+      
+          </md-list-item>
+          <md-divider></md-divider>
+          
+          <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('okay'); entry.entryMood = 'okay'" ng-class="{activeOption: emotion === 'okay'}">
+         
+              <div flex="60" flex-offset="30" layout="row">
+              <img src="/assets/img/okay.png" style="width:50px;height:50px;margin-right:10px;" alt="okay"></img>
+              <span>okay</span>
+              </div>
+      
+          </md-list-item>
+          <md-divider></md-divider>
+          <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('poor'); entry.entryMood = 'poor'" ng-class="{activeOption: emotion === 'poor'}">
+         
+              <div flex="60" flex-offset="30" layout="row">
+              <img src="/assets/img/poor.png" style="width:50px;height:50px;margin-right:10px;" alt="poor"></img>
+              <span>poor</span>
+              </div>
+      
+          </md-list-item>
+          <md-divider></md-divider>
+          <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('awful'); entry.entryMood = 'awful'" ng-class="{activeOption: emotion === 'awful'}">
+         
+              <div flex="60" flex-offset="30" layout="row">
+              <img ng-src="/assets/img/awful.png" style="width:50px;height:50px;margin-right:10px;" alt="awful"></img>
+              <span>awful</span>
+              </div>
+      
+          </md-list-item>
+          
+        <!--<md-list-item ng-repeat="item in menuItems" layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive(item); entry.entryMood = item" ng-class="{activeOption: emotion === item}">
          
           <div flex="60" flex-offset="30" layout="row">
           <img ng-src="/assets/img/{{item}}.png" style="width:50px;height:50px;margin-right:10px;" alt="{{item}}"></img>
           <span>{{item}}</span>
           </div>
           
-          
-        </md-list-item>
-        <md-divider></md-divider>
+          <md-divider></md-divider>
+        </md-list-item>-->
+       
      </md-list>      
    </md-card>
    </div>
-    <div style="margin:10px;" layout="row" layout-align="center">
-      <md-button style="background-color:teal;" class="md-raised md-primary" ng-click="createEntry(entry)">Log</md-button>
+    <div style="margin-top:10px;margin-bottom:10px;" layout="row" layout-align="center">
+      <md-button style="background-color:#17A697;font-size:24px;" class="md-raised md-primary" ng-click="createEntry(entry)">Log</md-button>
     </div>
     
 </div>

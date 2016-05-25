@@ -3,6 +3,7 @@
 var journalController = angular.module('journalController', []);
 
 journalController.controller('JournalCtrl', function ($scope, Entry, $location) {
+    $scope.title="Journal";
     $scope.entry = new Entry();
     
     $scope.entryReminder = "Please fill out at least one thought!";

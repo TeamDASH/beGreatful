@@ -21,10 +21,12 @@
                     </md-card-header>
                     <md-divider style="color:white"></md-divider>
                     <md-card-content style="padding:5px;background-color:#17A697;" layout="column" flex>
+                                 <span flex></span>
                                  <img ng-src="/assets/img/pencil.svg" alt="">
                                  <div id="journalPrompt"style="font-size:32px;text-align:center;">          
-                                    <a ng-href="/#/entryone"><span class="md-display-1">CREATE TODAY'S ENTRY</span></a>
+                                    <a ng-href="/#/entryone"><span class="md-display-1" style="color:white;">CREATE TODAY'S ENTRY</span></a>
                                 </div>
+                                <span flex></span>
                     </md-card-content>
                 </md-card>
             
@@ -37,7 +39,7 @@
                         </md-card-header-text>
                     </md-card-header>
                     
-                    <md-card-content style="padding:0;"flex>
+                    <md-card-content style="padding:10px;" flex>
                         <md-content style="height:220px;">
                         <md-list layout="column" style="font-size:14px;"flex>
                             <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start" ng-if="entry.entryThought1">
