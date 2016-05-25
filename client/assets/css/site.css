@@ -118,13 +118,6 @@ md-tabs md-ink-bar {
     transition: all 400ms ease-out 50ms;
 }
 
-.navTitle {
-    display:none;
-}
-
-.navTitleActive {
-    display: inline;
-}
 
 
 /* numbered buttons */
