@@ -5,7 +5,7 @@
             <div style="font-size:20px;color: #354458;margin-bottom:10px;">Monday, February 27</div>
         </div>
         <md-divider flex></md-divider>
-        <div class="md-display-1" style="margin-top:10px;" show-gt-xs hide-xs>How are you feeling today?</div> 
+        <div class="md-display-1" style="margin-top:10px;font-size:28px;" show-gt-xs hide-xs>How are you feeling today?</div> 
         <div  style="margin-top:10px;font-size:26px;color: #354458;"hide-gt-xs>How are you feeling today?</div>    
     </div>
         
@@ -14,11 +14,11 @@
   <div ng-if="moodReminderDisplay == true" style="color:#EB7260">{{moodReminder}}</div>
    <div layout="row">
         <img src="assets/img/face.svg" alt="face" style="width:30px;height:30px;margin-right:15px;">
-        <span style="color: #354458;height:30px;font-size:24px;" layout="column" layout-align="center center">Emotional Check-in</span>
+        <span style="color: #354458;height:30px;font-size:20px;" layout="column" layout-align="center center">Emotional Check-in</span>
     </div>
   
   <div layout="row">  
-   <md-card flex-offset-gt-sm="35" flex-gt-sm="30" flex-sm="100" flex-xs="100" >
+   <md-card md-whiteframe="6" flex-offset-gt-sm="35" flex-gt-sm="30" flex-sm="100" flex-xs="100" >
       <md-list style="padding:0;" >
         <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('great'); entry.entryMood = 'great'" ng-class="{activeOption: emotion === 'great'}">
          
@@ -79,7 +79,7 @@
    </md-card>
    </div>
     <div style="margin-top:10px;margin-bottom:10px;" layout="row" layout-align="center">
-      <md-button style="background-color:#17A697;font-size:24px;" class="md-raised md-primary" ng-click="createEntry(entry)">Log</md-button>
+      <md-button style="background-color:#17A697;font-size:20px;" class="md-raised md-primary" ng-click="createEntry(entry)">Log</md-button>
     </div>
     
 </div>

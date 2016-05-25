@@ -12,7 +12,7 @@
         
         <div class='md-padding' layout="row" layout-wrap >
                 <!--Create today's entry card template-->
-                <md-card class="md-body-1" style="width: 285px;" ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" layout="column">          
+                <md-card class="md-body-1" style="width: 285px;" ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" md-whiteframe="4" layout="column">          
                     <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
                         <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{currDate.getDate()}}</span></md-card-avatar>
                         <md-card-header-text style="min-height:45px;" layout="row" layout-align="none center">
@@ -30,7 +30,7 @@
                     </md-card-content>
                 </md-card>
             
-                <md-card class="md-body-1" style="width: 285px;" ng-if= "currMonthEntries.length > 0" ng-repeat="entry in currMonthEntries" layout="column">
+                <md-card class="md-body-1" style="width: 285px;" ng-if= "currMonthEntries.length > 0" ng-repeat="entry in currMonthEntries" md-whiteframe="4" layout="column">
                 
                     <md-card-header layout="row" style="padding:0;font-size:24px;height:45px;color:white;background-color:#17A697;">
                         <md-card-avatar style="background-color:#17A697;min-height:45px;width:50px;" layout="row" layout-align="center center"><span>{{entry.entryTime.getDate()}}</span></md-card-avatar>
@@ -43,17 +43,17 @@
                         <md-content style="height:220px;">
                         <md-list layout="column" style="font-size:14px;"flex>
                             <md-list-item style="margin-bottom:8px;" layout="row" layout-align="none start" ng-if="entry.entryThought1">
-                                <img ng-src="/assets/img/1.svg" style="margin-right:5px;" flex="10">
+                                <img ng-src="/assets/img/1.svg" style="margin-right:10px;" flex="10">
                                 <span flex="90">{{entry.entryThought1}}</span>
                             </md-list-item>
                             
                             <md-list-item style="margin-bottom:5px;" layout="row" layout-align="none start" ng-if="entry.entryThought2">
-                                <img ng-src="/assets/img/2.svg"style="margin-right:5px;" flex="10" >
+                                <img ng-src="/assets/img/2.svg"style="margin-right:10px;" flex="10" >
                                 <span flex="90">{{entry.entryThought2}}</span>
                             </md-list-item>
                             
                             <md-list-item layout="row" layout-align="none start" ng-if="entry.entryThought3">
-                                <img ng-src="/assets/img/3.svg" style="margin-right:5px;" flex="10">
+                                <img ng-src="/assets/img/3.svg" style="margin-right:10px;" flex="10">
                                 <span flex="90">{{entry.entryThought3}}</span>
                             </md-list-item>
                         </md-list>
