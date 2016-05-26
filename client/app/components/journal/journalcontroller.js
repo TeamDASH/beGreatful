@@ -6,6 +6,12 @@ journalController.controller('JournalCtrl', function ($scope, Entry, $location) 
     $scope.title="Journal";
     $scope.entry = new Entry();
     
+    $scope.currDate = new Date();
+    
+    $scope.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  
+    $scope.daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    
     $scope.entryReminder = "Please fill out at least one thought!";
     
     $scope.moodReminder = "Please select a mood!";

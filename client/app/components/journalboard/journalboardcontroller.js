@@ -11,6 +11,13 @@ cardController.controller('CardCtrl', function($mdMedia, $scope, Entry, $locatio
     }
   });
   
+  $scope.hideLatest = false;
+  
+  $scope.hideEntry = function() {
+    $scope.hideLatest = !$scope.hideLatest;
+  }
+  
+  
  $scope.getEmoticonPath = function(emotion) {
     return getEmoticon(emotion);
  }

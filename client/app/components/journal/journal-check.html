@@ -2,7 +2,7 @@
   
   <div style="margin-bottom:15px;" layout="column" flex>
         <div layout="row">
-            <div style="font-size:20px;color: #354458;margin-bottom:10px;">Monday, February 27</div>
+            <div style="font-size:20px;color: #354458;margin-bottom:10px;">{{daysOfWeek[currDate.getDay()]}}, {{months[currDate.getMonth()]}} {{currDate.getDate()}}</div>
         </div>
         <md-divider flex></md-divider>
         <div class="md-display-1" style="margin-top:10px;font-size:28px;" show-gt-xs hide-xs>How are you feeling today?</div> 

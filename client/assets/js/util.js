@@ -3,26 +3,16 @@
 function getEmoticon(identifier) {
     switch(identifier) {
     case "good":
-        return '../../assets/img/good.svg';
+        return '../../assets/img/good.png';
     case "great":
-        return '../../assets/img/great.svg';
+        return '../../assets/img/great.png';
     case "okay":
-        return '../../assets/img/okay.svg';
+        return '../../assets/img/okay.png';
     case "poor":
-        return '../../assets/img/poor.svg';
+        return '../../assets/img/poor.png';
     case "awful":
-        return '../../assets/img/awful.svg';
+        return '../../assets/img/awful.png';
     default:
-        return '../../assets/img/good.svg';
+        return '../../assets/img/good.png';
     }
-    
-    // if (identifier == 'good') {
-    //     return '../../assets/img/good.svg';
-    // } else if (identifier == 'great') {
-    //     return '../../assets/img/good.'
-    // }
-    
-    // else {
-    //     return '../../assets/img/good.svg'; 
-    // }
 }
