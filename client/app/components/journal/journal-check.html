@@ -23,7 +23,7 @@
         <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('great'); entry.entryMood = 'great'" ng-class="{activeOption: emotion === 'great'}">
          
           <div flex="60" flex-offset="30" layout="row">
-          <img src="/assets/img/great.png" style="width:50px;height:50px;margin-right:10px;" alt="great"></img>
+          <img preload-image ng-src="/assets/img/great.png" style="width:50px;height:50px;margin-right:10px;" alt="great"></img>
           <span>great</span>
           </div>
           </md-list-item>
@@ -31,7 +31,7 @@
           <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('good'); entry.entryMood = 'good'" ng-class="{activeOption: emotion === 'good'}">
          
               <div flex="60" flex-offset="30" layout="row">
-              <img src="/assets/img/good.png" style="width:50px;height:50px;margin-right:10px;" alt="good"></img>
+              <img preload-image ng-src="/assets/img/good.png" style="width:50px;height:50px;margin-right:10px;" alt="good"></img>
               <span>good</span>
               </div>
       
@@ -41,7 +41,7 @@
           <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('okay'); entry.entryMood = 'okay'" ng-class="{activeOption: emotion === 'okay'}">
          
               <div flex="60" flex-offset="30" layout="row">
-              <img src="/assets/img/okay.png" style="width:50px;height:50px;margin-right:10px;" alt="okay"></img>
+              <img preload-image ng-src="/assets/img/okay.png" style="width:50px;height:50px;margin-right:10px;" alt="okay"></img>
               <span>okay</span>
               </div>
       
@@ -50,7 +50,7 @@
           <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('poor'); entry.entryMood = 'poor'" ng-class="{activeOption: emotion === 'poor'}">
          
               <div flex="60" flex-offset="30" layout="row">
-              <img src="/assets/img/poor.png" style="width:50px;height:50px;margin-right:10px;" alt="poor"></img>
+              <img preload-image ng-src="/assets/img/poor.png" style="width:50px;height:50px;margin-right:10px;" alt="poor"></img>
               <span>poor</span>
               </div>
       
@@ -59,7 +59,7 @@
           <md-list-item layout="row" style="padding:3px;" md-ink-ripple ng-click="setActive('awful'); entry.entryMood = 'awful'" ng-class="{activeOption: emotion === 'awful'}">
          
               <div flex="60" flex-offset="30" layout="row">
-              <img ng-src="/assets/img/awful.png" style="width:50px;height:50px;margin-right:10px;" alt="awful"></img>
+              <img preload-image ng-src="/assets/img/awful.png" style="width:50px;height:50px;margin-right:10px;" alt="awful"></img>
               <span>awful</span>
               </div>
       
