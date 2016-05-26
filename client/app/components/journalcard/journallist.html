@@ -11,7 +11,8 @@
            
             <md-divider></md-divider>
             
-            <md-list-item  ng-if="latestEntry.entryTime.getDate() != currDate.getDate()" style="background-color:#17A697;">
+             <!--Today's entry-->
+            <md-list-item style="background-color:#17A697;">
                 <md-content layout="row" style="background-color:#17A697;" layout-fill >
                     <div style="background-color:#17A697;border-style:solid;border-width:1px;border-color:white;text-align:center;width:50px;height:50px;margin-top:5px;
                     margin-bottom:5px;padding-top:5px;color:white; font-size:18px;border-radius:5px;">
@@ -26,22 +27,112 @@
                 </md-content>
             </md-list-item>
             
-            <md-list-item ng-repeat="entry in currMonthEntries">
+            
+            <!--Latest entry-->
+            <md-list-item ng-hide="hideLatest == true">
                 <md-content layout="row" layout-fill>
                     
                     <div style="background-color:#17A697;text-align:center;width:50px;height:50px;margin-top:5px;
                     margin-bottom:5px;padding-top:5px;color:white; font-size:18px; border-radius:5px;">
-                        <div>{{entry.entryTime.getDate()}}</div>
-                        <div>{{currMonth}}</div>
+                        <div>{{latestEntry.entryTime.getDate()}}</div>
+                        <div ng-click="hideEntry()">{{currMonth}}</div>
                     </div>
                     
                     <div style="margin:5px;color:#3E5060;" class="md-list-item-text" flex>
-                          {{entry.entryThought1}}
+                          {{latestEntry.entryThought1}}
                     </div>
-                    <md-icon md-svg-src={{getEmoticonPath(entry.entryMood)}} aria-label="emoticon" style="width:20px;height:20px;" ></md-icon>
+                    <div layout="column">
+                        <span flex></span>
+                     <img src={{getEmoticonPath(latestEntry.entryMood)}} aria-label="emoticon" style="width:20px;height:20px;margin-bottom:5px" >
+                     </div>
                 </md-content>
                 <md-divider></md-divider>
             </md-list-item>
+            
+              <!--Demo entry Wednesday-->
+            <md-list-item>
+                <md-content layout="row" layout-fill>
+                    
+                    <div style="background-color:#17A697;text-align:center;width:50px;height:50px;margin-top:5px;
+                    margin-bottom:5px;padding-top:5px;color:white; font-size:18px; border-radius:5px;">
+                        <div>25</div>
+                        <div>May</div>
+                    </div>
+                    
+                    <div style="margin:5px;color:#3E5060;" class="md-list-item-text" flex>
+                          I am grateful that I went running in Ravenna Park today.
+                    </div>
+                    <div layout="column">
+                        <span flex></span>
+                     <img src={{getEmoticonPath('good')}} aria-label="emoticon" style="width:20px;height:20px;margin-bottom:5px" >
+                     </div>
+                </md-content>
+                <md-divider></md-divider>
+            </md-list-item>
+            
+           <!--Demo entry Tuesday-->
+            <md-list-item>
+                <md-content layout="row" layout-fill>
+                    
+                    <div style="background-color:#17A697;text-align:center;width:50px;height:50px;margin-top:5px;
+                    margin-bottom:5px;padding-top:5px;color:white; font-size:18px; border-radius:5px;">
+                        <div>24</div>
+                        <div>May</div>
+                    </div>
+                     <img src="/assets/img/hike.jpg" alt="" style="max-width:100%;max-height:100px;margin:5px">
+                    <div style="margin:5px;color:#3E5060;" class="md-list-item-text" flex>
+                          I am grateful that I went hiking with my family at Mount Rainier National Park.
+                    </div>
+                    <div layout="column">
+                        <span flex></span>
+                     <img src={{getEmoticonPath('great')}} aria-label="emoticon" style="width:20px;height:20px;margin-bottom:5px" >
+                     </div>
+                </md-content>
+                <md-divider></md-divider>
+            </md-list-item>
+            
+            <!--Demo entry Monday-->
+            <md-list-item>
+                <md-content layout="row" layout-fill>
+                    
+                    <div style="background-color:#17A697;text-align:center;width:50px;height:50px;margin-top:5px;
+                    margin-bottom:5px;padding-top:5px;color:white; font-size:18px; border-radius:5px;">
+                        <div>23</div>
+                        <div>May</div>
+                    </div>
+                    <div style="margin:5px;color:#3E5060;" class="md-list-item-text" flex>
+                          I am grateful that I was able to have lunch with Rebecca today. She really made me feel better about life in general.
+                    </div>
+                     <div layout="column">
+                        <span flex></span>
+                     <img src={{getEmoticonPath('good')}} aria-label="emoticon" style="width:20px;height:20px;margin-bottom:5px" >
+                     </div>
+                </md-content>
+                <md-divider></md-divider>
+            </md-list-item>
+            
+               <!--Demo entry Sunday-->
+            <md-list-item>
+                <md-content layout="row" layout-fill>
+                    
+                    <div style="background-color:#17A697;text-align:center;width:50px;height:50px;margin-top:5px;
+                    margin-bottom:5px;padding-top:5px;color:white; font-size:18px; border-radius:5px;">
+                        <div>22</div>
+                        <div>May</div>
+                    </div>
+                    <img src="/assets/img/friends.jpeg" alt="" style="max-width:100%;max-height:100px;margin:5px">
+                    <div style="margin:5px;color:#3E5060;" class="md-list-item-text" flex>
+                          I am grateful that I got to spend time with Amy, Sam and Heather today. I hadn't seen them in a long time.
+                    </div>
+                     <div layout="column">
+                        <span flex></span>
+                     <img src={{getEmoticonPath('good')}} aria-label="emoticon" style="width:20px;height:20px;margin-bottom:5px" >
+                     </div>
+                </md-content>
+                <md-divider></md-divider>
+            </md-list-item>
+            
+            
         </md-list>
     </md-content>
 </div>
